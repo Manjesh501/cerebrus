@@ -216,7 +216,7 @@ cerberus-ai-cybershield/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/Manjesh501/Cerberus-ai-cybershield.git
+   git clone https://github.com/Manjesh501/Cerberus.git
    cd Cerberus-ai-cybershield
    ```
 
