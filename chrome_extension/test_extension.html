@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Extension</title>
+</head>
+<body>
+    <h1>Test Extension Functionality</h1>
+    <button id="testButton">Test Extension</button>
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById('testButton').addEventListener('click', function() {
+            // Test sending a message to the background script
+            chrome.runtime.sendMessage({type: 'test'}, function(response) {
+                if (chrome.runtime.lastError) {
+                    document.getElementById('result').innerHTML = 'Error: ' + chrome.runtime.lastError.message;
+                } else {
+                    document.getElementById('result').innerHTML = 'Success: ' + JSON.stringify(response);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

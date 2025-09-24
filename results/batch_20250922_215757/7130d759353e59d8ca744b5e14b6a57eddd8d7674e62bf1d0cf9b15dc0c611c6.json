@@ -1,0 +1,64 @@
+{
+  "file_path": "batch_uploads\\20250922_215757\\SANDEEP_KUMAR_PARSHURAM_TIWARI.pdf",
+  "file_name": "SANDEEP_KUMAR_PARSHURAM_TIWARI.pdf",
+  "file_hash": "7130d759353e59d8ca744b5e14b6a57eddd8d7674e62bf1d0cf9b15dc0c611c6",
+  "is_malware": true,
+  "confidence": 0.44,
+  "malware_type": "Generic",
+  "risk_score": 44,
+  "analysis_method": "Document,Type,VirusTotal",
+  "processing_time": 1.266913890838623,
+  "detailed_results": {
+    "document": {
+      "file_path": "batch_uploads\\20250922_215757\\SANDEEP_KUMAR_PARSHURAM_TIWARI.pdf",
+      "file_type": "application/pdf",
+      "mime_type": "application/pdf",
+      "file_hash": "7130d759353e59d8ca744b5e14b6a57eddd8d7674e62bf1d0cf9b15dc0c611c6",
+      "suspicious_indicators": [
+        "Binary contains suspicious string: http://"
+      ],
+      "extracted_urls": [
+        "http://ns.adobe.com/xap/1.0/\u0000<?xpacket",
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "http://ns.adobe.com/xap/1.0/mm/",
+        "http://ns.adobe.com/xap/1.0/sType/ResourceRef#",
+        "http://ns.adobe.com/xap/1.0/",
+        "http://purl.org/dc/elements/1.1/"
+      ],
+      "extracted_ips": [
+        "2.85.102.1"
+      ],
+      "risk_score": {
+        "score": 44,
+        "risk_level": "Medium"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": true,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "Unknown",
+      "confidence": 0,
+      "file_type": "application/pdf",
+      "file_hash": "7130d759353e59d8ca744b5e14b6a57eddd8d7674e62bf1d0cf9b15dc0c611c6",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.0,
+        "worm": 0.0,
+        "spyware": 0.0,
+        "virus": 0.0
+      }
+    },
+    "virustotal": {
+      "scan_id": "7130d759353e59d8ca744b5e14b6a57eddd8d7674e62bf1d0cf9b15dc0c611c6",
+      "scan_date": 1758558364,
+      "total": 76,
+      "positives": 0,
+      "sha256": "7130d759353e59d8ca744b5e14b6a57eddd8d7674e62bf1d0cf9b15dc0c611c6",
+      "md5": "822298264a932ac3a8306a5709dcc328",
+      "permalink": "https://www.virustotal.com/gui/file/7130d759353e59d8ca744b5e14b6a57eddd8d7674e62bf1d0cf9b15dc0c611c6",
+      "scans": {},
+      "scan_summary": "Showing 3 of 0 positive detections (total scanned: 76)"
+    }
+  }
+}

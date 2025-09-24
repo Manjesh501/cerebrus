@@ -1,0 +1,8 @@
+2025-04-30 13:21:35,248 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-04-30 13:21:35,263 - ModelExplainer - INFO - Loaded feature extraction module
+2025-04-30 13:23:06,674 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-04-30 13:23:06,689 - ModelExplainer - INFO - Loaded feature extraction module
+2025-04-30 13:24:35,083 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-04-30 13:24:35,101 - ModelExplainer - INFO - Loaded feature extraction module
+2025-04-30 13:25:49,140 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-04-30 13:25:49,157 - ModelExplainer - INFO - Loaded feature extraction module

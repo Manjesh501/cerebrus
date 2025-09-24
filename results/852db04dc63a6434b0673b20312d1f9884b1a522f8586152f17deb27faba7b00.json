@@ -1,0 +1,43 @@
+{
+  "filename": "test.txt",
+  "file_path": "uploads\\test.txt",
+  "file_size": 129,
+  "file_hash": "852db04dc63a6434b0673b20312d1f9884b1a522f8586152f17deb27faba7b00",
+  "file_category": "document",
+  "is_malware": false,
+  "confidence": 0,
+  "malware_type": "Unknown",
+  "risk_score": 0,
+  "timestamp": "2025-09-22T18:13:11.257968",
+  "details": {
+    "malware_type": {
+      "detected_type": "Unknown",
+      "confidence": 0,
+      "file_type": "text/plain",
+      "file_hash": "852db04dc63a6434b0673b20312d1f9884b1a522f8586152f17deb27faba7b00",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.0,
+        "worm": 0.0,
+        "spyware": 0.0,
+        "virus": 0.0
+      }
+    },
+    "document_analysis": {
+      "file_path": "uploads\\test.txt",
+      "file_type": "text/plain",
+      "mime_type": "text/plain",
+      "file_hash": "852db04dc63a6434b0673b20312d1f9884b1a522f8586152f17deb27faba7b00",
+      "suspicious_indicators": [],
+      "extracted_urls": [],
+      "extracted_ips": [],
+      "risk_score": {
+        "score": 0,
+        "risk_level": "Low"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": false,
+      "embedded_files": []
+    }
+  }
+}

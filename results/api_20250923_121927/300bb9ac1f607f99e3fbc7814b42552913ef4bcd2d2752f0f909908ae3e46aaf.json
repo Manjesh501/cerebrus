@@ -1,0 +1,97 @@
+{
+  "file_path": "uploads\\Malware.Calc.ps1.exe",
+  "file_name": "Malware.Calc.ps1.exe",
+  "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+  "is_malware": true,
+  "confidence": 0.8,
+  "malware_type": "Generic",
+  "risk_score": 49,
+  "analysis_method": "ML,Document,Type,Dynamic,VirusTotal",
+  "processing_time": 13.368890523910522,
+  "detailed_results": {
+    "ml_model": {
+      "is_malware": true,
+      "prediction": 1
+    },
+    "document": {
+      "file_path": "uploads\\Malware.Calc.ps1.exe",
+      "file_type": "application/x-msdownload",
+      "mime_type": "application/x-msdownload",
+      "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "suspicious_indicators": [
+        "Binary contains suspicious string: http://",
+        "Binary contains suspicious string: https://"
+      ],
+      "extracted_urls": [
+        "http://www.apache.org/<br",
+        "http://www.zeustech.net/<br",
+        "http://www.apache.org/",
+        "http://www.zeustech.net/",
+        "https://\u0000\u0000\u0000\u0000[%s",
+        "http://\u0000ab:"
+      ],
+      "extracted_ips": [
+        "0.0.0.0"
+      ],
+      "risk_score": {
+        "score": 49,
+        "risk_level": "Medium"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": true,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "worm",
+      "confidence": 0.48333333333333334,
+      "file_type": "application/x-msdownload",
+      "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.4625,
+        "worm": 0.48333333333333334,
+        "spyware": 0.0,
+        "virus": 0.1
+      }
+    },
+    "dynamic": {
+      "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "file_path": "uploads\\Malware.Calc.ps1.exe",
+      "processes": [
+        {
+          "name": "RuntimeBroker.exe",
+          "pid": 9052,
+          "path": "C:\\WINDOWS\\System32\\RuntimeBroker.exe",
+          "has_args": true
+        },
+        {
+          "name": "CalculatorApp.exe",
+          "pid": 19620,
+          "path": "C:\\Program Files\\WindowsApps\\Microsoft.WindowsCalculator_11.2502.2.0_x64__8wekyb3d8bbwe\\CalculatorApp.exe"
+        }
+      ],
+      "process_count": 2,
+      "connection_count": 0,
+      "malware_type_indicators": {
+        "likely_type": "Unknown",
+        "type_scores": {
+          "ransomware": 0,
+          "trojan": 0,
+          "worm": 0,
+          "spyware": 0,
+          "virus": 0
+        }
+      },
+      "execution": {
+        "executed": true,
+        "execution_time": 0.0528109073638916,
+        "exit_code": 0,
+        "terminated": false
+      },
+      "risk_score": 0
+    },
+    "virustotal": {
+      "error": "HTTPSConnectionPool(host='www.virustotal.com', port=443): Max retries exceeded with url: /api/v3/files/300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x00000220B0536C50>: Failed to resolve 'www.virustotal.com' ([Errno 11001] getaddrinfo failed)\"))"
+    }
+  }
+}

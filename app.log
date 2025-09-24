@@ -1,0 +1,946 @@
+2025-09-22 17:30:31,385 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 17:30:31,397 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 17:30:31,420 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 17:30:31,455 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 17:30:31,456 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 17:30:31,457 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 17:30:31,459 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_p3tv176e
+2025-09-22 17:30:31,459 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 17:30:31,461 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:30:31,489 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:30:31,489 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 17:30:31,489 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 17:30:31,490 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_l6fed15j
+2025-09-22 17:30:31,490 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 17:30:31,490 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 17:30:31,490 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 17:30:34,218 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:30:34,218 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 17:30:34,223 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 17:30:34,264 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 17:30:34,295 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 17:36:21,318 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 17:36:21,332 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 17:36:21,373 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 17:36:21,429 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 17:36:21,430 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 17:36:21,431 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 17:36:21,435 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_453fct39
+2025-09-22 17:36:21,435 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 17:36:21,438 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:36:21,491 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:36:21,491 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 17:36:21,491 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 17:36:21,492 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_go4fo9gx
+2025-09-22 17:36:21,492 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 17:36:21,492 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 17:36:21,493 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 17:36:23,368 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:36:23,368 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 17:36:23,376 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 17:36:23,450 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 17:36:23,495 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 17:43:26,646 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 17:43:26,662 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 17:43:26,700 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 17:43:26,752 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 17:43:26,754 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 17:43:26,754 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 17:43:26,759 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_8qqi44g1
+2025-09-22 17:43:26,760 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 17:43:26,762 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:43:26,815 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:43:26,816 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 17:43:26,816 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 17:43:26,816 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_mnxnbpm_
+2025-09-22 17:43:26,816 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 17:43:26,816 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 17:43:26,817 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 17:43:28,787 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:43:28,787 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 17:43:28,796 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 17:43:28,872 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 17:43:28,926 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 17:43:36,281 - app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 870, in not_found
+    return render_template('error.html', error="Page not found"), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:43:36,431 - waitress - ERROR - Exception while serving /favicon.ico
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 870, in not_found
+    return render_template('error.html', error="Page not found"), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 874, in server_error
+    return render_template('error.html', error="Server error"), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:44:12,037 - app - ERROR - Exception on /api/analyze [POST]
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 633, in api_analyze
+    if file and allowed_file(file.filename):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 211, in allowed_file
+    return ext in sum(ALLOWED_EXTENSIONS.values(), set())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+2025-09-22 17:44:12,039 - waitress - ERROR - Exception while serving /api/analyze
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 633, in api_analyze
+    if file and allowed_file(file.filename):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 211, in allowed_file
+    return ext in sum(ALLOWED_EXTENSIONS.values(), set())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 874, in server_error
+    return render_template('error.html', error="Server error"), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:44:35,982 - app - ERROR - Exception on /batch [GET]
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 555, in batch_analysis
+    return render_template('batch.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: batch.html
+2025-09-22 17:44:35,986 - waitress - ERROR - Exception while serving /batch
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 555, in batch_analysis
+    return render_template('batch.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: batch.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 874, in server_error
+    return render_template('error.html', error="Server error"), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:44:36,232 - app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 870, in not_found
+    return render_template('error.html', error="Page not found"), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:44:36,234 - waitress - ERROR - Exception while serving /favicon.ico
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 870, in not_found
+    return render_template('error.html', error="Page not found"), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 874, in server_error
+    return render_template('error.html', error="Server error"), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:45:01,392 - app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 870, in not_found
+    return render_template('error.html', error="Page not found"), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:45:01,396 - waitress - ERROR - Exception while serving /favicon.ico
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 802, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 777, in handle_http_exception
+    return self.ensure_sync(handler)(e)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 870, in not_found
+    return render_template('error.html', error="Page not found"), 404
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 874, in server_error
+    return render_template('error.html', error="Server error"), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:45:20,385 - app - ERROR - Exception on /api/analyze [POST]
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 633, in api_analyze
+    if file and allowed_file(file.filename):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 211, in allowed_file
+    return ext in sum(ALLOWED_EXTENSIONS.values(), set())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+2025-09-22 17:45:20,387 - waitress - ERROR - Exception while serving /api/analyze
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 633, in api_analyze
+    if file and allowed_file(file.filename):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 211, in allowed_file
+    return ext in sum(ALLOWED_EXTENSIONS.values(), set())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'set' and 'set'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\channel.py", line 430, in service
+    task.service()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 167, in service
+    self.execute()
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\task.py", line 435, in execute
+    app_iter = self.channel.server.application(environ, start_response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\waitress\proxy_headers.py", line 64, in translate_proxy_headers
+    return app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\app.py", line 860, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\app.py", line 874, in server_error
+    return render_template('error.html', error="Server error"), 500
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\venv\Lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-09-22 17:51:03,304 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 17:51:03,314 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 17:51:03,332 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 17:51:03,361 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 17:51:03,362 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 17:51:03,362 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 17:51:03,365 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_aqwxtxx2
+2025-09-22 17:51:03,365 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 17:51:03,367 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:51:03,393 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:51:03,393 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 17:51:03,393 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 17:51:03,394 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_7s386c48
+2025-09-22 17:51:03,394 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 17:51:03,394 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 17:51:03,394 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 17:51:04,407 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 17:51:04,408 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 17:51:04,412 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 17:51:04,447 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 17:51:04,475 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 18:01:24,681 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 18:01:24,698 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 18:01:24,742 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 18:01:24,809 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 18:01:24,811 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 18:01:24,811 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 18:01:24,816 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_bawpv_oe
+2025-09-22 18:01:24,816 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 18:01:24,820 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:01:24,903 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:01:24,903 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 18:01:24,903 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 18:01:24,904 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_6dj1p3gr
+2025-09-22 18:01:24,904 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 18:01:24,905 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 18:01:24,905 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 18:01:29,197 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:01:29,197 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 18:01:29,208 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 18:01:29,289 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 18:01:29,343 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 18:13:50,658 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 18:13:50,674 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 18:13:50,717 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 18:13:50,781 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 18:13:50,784 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 18:13:50,784 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 18:13:50,789 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_0dt5yilh
+2025-09-22 18:13:50,789 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 18:13:50,793 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:13:50,854 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:13:50,854 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 18:13:50,854 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 18:13:50,855 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_oitv8n_k
+2025-09-22 18:13:50,855 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 18:13:50,855 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 18:13:50,855 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 18:13:52,853 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:13:52,854 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 18:13:52,861 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 18:13:52,942 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 18:13:52,998 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 18:15:12,356 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 18:15:12,373 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 18:15:12,416 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 18:15:12,468 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 18:15:12,470 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 18:15:12,470 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 18:15:12,475 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_jz6vzerv
+2025-09-22 18:15:12,476 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 18:15:12,478 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:15:12,531 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:15:12,531 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 18:15:12,531 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 18:15:12,532 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_ic4h6jab
+2025-09-22 18:15:12,532 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 18:15:12,532 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 18:15:12,532 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 18:15:14,512 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:15:14,512 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 18:15:14,523 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 18:15:14,627 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 18:15:14,692 - waitress - INFO - Serving on http://0.0.0.0:5000
+2025-09-22 18:20:43,966 - Malware-Detector - INFO - ML model loaded successfully
+2025-09-22 18:20:43,983 - Malware-Detector - INFO - Feature extractor loaded successfully
+2025-09-22 18:20:44,019 - Malware-Detector - INFO - Malware type detector loaded successfully
+2025-09-22 18:20:44,072 - Malware-Detector - INFO - Document analyzer loaded successfully
+2025-09-22 18:20:44,074 - VirusTotal-API - WARNING - VirusTotal API key not found. Functionality will be limited.
+2025-09-22 18:20:44,074 - Malware-Detector - WARNING - VirusTotal scanner initialized but API key not configured
+2025-09-22 18:20:44,079 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_fuluo81h
+2025-09-22 18:20:44,080 - Malware-Detector - INFO - Dynamic analyzer loaded successfully
+2025-09-22 18:20:44,082 - BatchProcessor - INFO - Loading ML model from: ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:20:44,137 - BatchProcessor - INFO - Loaded ML model analyzer from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:20:44,137 - BatchProcessor - INFO - Loaded document analyzer
+2025-09-22 18:20:44,137 - BatchProcessor - INFO - Loaded malware type detector
+2025-09-22 18:20:44,138 - DynamicAnalysis - INFO - Created temporary directory: C:\Users\TIWAR\AppData\Local\Temp\dynamic_analysis_uoe_7481
+2025-09-22 18:20:44,138 - BatchProcessor - INFO - Loaded dynamic analyzer
+2025-09-22 18:20:44,138 - BatchProcessor - WARNING - No VirusTotal API key provided. VirusTotal scanning will be skipped.
+2025-09-22 18:20:44,138 - Malware-Detector - INFO - Batch processor loaded successfully
+2025-09-22 18:20:46,142 - ModelExplainer - INFO - Loaded model from ML_model/malwareclassifier-V2.pkl
+2025-09-22 18:20:46,143 - ModelExplainer - INFO - Loaded feature extraction module
+2025-09-22 18:20:46,152 - Malware-Detector - INFO - Model explainer loaded successfully
+2025-09-22 18:20:46,252 - Malware-Detector - ERROR - Error loading realtime monitor: cannot import name 'RealtimeMonitor' from 'realtime_monitor' (C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\realtime_monitor.py)
+2025-09-22 18:20:46,320 - waitress - INFO - Serving on http://0.0.0.0:5000

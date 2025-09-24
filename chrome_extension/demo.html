@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerberus Chrome Extension - Gmail Security Features Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .feature-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .installation {
+            background: #e7f3ff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+            border-left: 5px solid #007bff;
+        }
+        
+        .installation h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        
+        .installation ol {
+            line-height: 1.8;
+        }
+        
+        .installation ol li {
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .warning h3 {
+            color: #f39c12;
+            margin-top: 0;
+        }
+        
+        .stats-demo {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Cerberus Gmail Security</h1>
+            <p>Advanced Gmail Protection with AI-Powered Threat Detection</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📎</div>
+                <div class="feature-title">Smart Attachment Analysis</div>
+                <div class="feature-description">
+                    Real-time analysis of all Gmail attachments using advanced heuristics and threat intelligence.
+                </div>
+                <ul class="feature-list">
+                    <li>Detects malicious executables and scripts</li>
+                    <li>Identifies social engineering patterns</li>
+                    <li>Heuristic analysis for unknown threats</li>
+                    <li>Visual warning indicators</li>
+                    <li>Detailed risk assessments</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <div class="feature-title">Email Link Scanning</div>
+                <div class="feature-description">
+                    Automatically scans all links in emails for malicious content and phishing attempts.
+                </div>
+                <ul class="feature-list">
+                    <li>Real-time URL reputation checking</li>
+                    <li>Visual warnings for dangerous links</li>
+                    <li>Click protection with confirmation dialogs</li>
+                    <li>Threat score display</li>
+                    <li>Safe browsing integration</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎣</div>
+                <div class="feature-title">Advanced Phishing Detection</div>
+                <div class="feature-description">
+                    AI-powered analysis of email content to detect sophisticated phishing attempts.
+                </div>
+                <ul class="feature-list">
+                    <li>Content analysis for suspicious patterns</li>
+                    <li>Sender reputation checking</li>
+                    <li>Social engineering detection</li>
+                    <li>Visual phishing alerts</li>
+                    <li>Risk indicator display</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Real-Time Protection</div>
+                <div class="feature-description">
+                    Continuous monitoring and instant threat detection as you use Gmail.
+                </div>
+                <ul class="feature-list">
+                    <li>Background threat monitoring</li>
+                    <li>Instant notifications</li>
+                    <li>Automatic threat blocking</li>
+                    <li>Performance optimized</li>
+                    <li>Zero-impact on Gmail performance</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Security Analytics</div>
+                <div class="feature-description">
+                    Comprehensive security statistics and threat history tracking.
+                </div>
+                <ul class="feature-list">
+                    <li>Attachment scan statistics</li>
+                    <li>Threat detection history</li>
+                    <li>Security trend analysis</li>
+                    <li>Protection effectiveness metrics</li>
+                    <li>Detailed threat reports</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <div class="feature-title">Flexible Configuration</div>
+                <div class="feature-description">
+                    Customizable protection settings to match your security preferences.
+                </div>
+                <ul class="feature-list">
+                    <li>Enable/disable individual features</li>
+                    <li>Sensitivity level adjustment</li>
+                    <li>Notification preferences</li>
+                    <li>Custom threat thresholds</li>
+                    <li>Server endpoint configuration</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="stats-demo">
+            <h2>📈 Sample Protection Statistics</h2>
+            <p>Here's what your Cerberus protection dashboard might look like:</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">247</div>
+                    <div class="stat-label">Attachments Scanned</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Threats Blocked</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Suspicious Files Found</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,834</div>
+                    <div class="stat-label">Emails Processed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="installation">
+            <h2>🚀 Installation & Setup</h2>
+            <ol>
+                <li><strong>Load Extension:</strong> Open Chrome and navigate to <code>chrome://extensions/</code></li>
+                <li><strong>Enable Developer Mode:</strong> Toggle the "Developer mode" switch in the top right</li>
+                <li><strong>Load Unpacked:</strong> Click "Load unpacked" and select the extension folder</li>
+                <li><strong>Configure Server:</strong> Set your Cerberus server URL in the extension popup</li>
+                <li><strong>Visit Gmail:</strong> Open Gmail - Cerberus will automatically start protecting you!</li>
+            </ol>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ Important Security Notes</h3>
+            <ul>
+                <li><strong>Server Connection:</strong> Ensure your Cerberus backend server is running for full functionality</li>
+                <li><strong>Gmail Permissions:</strong> The extension requires Gmail access permissions to analyze content</li>
+                <li><strong>Privacy:</strong> All analysis is performed securely with your privacy in mind</li>
+                <li><strong>Updates:</strong> Keep the extension updated for the latest threat detection capabilities</li>
+            </ul>
+        </div>
+
+        <div class="feature-card" style="margin-top: 30px; text-align: center; border-left: 5px solid #28a745;">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-title" style="color: #28a745;">Your Gmail is Now Protected!</div>
+            <div class="feature-description">
+                Cerberus is actively monitoring your Gmail for threats. Check the extension popup for real-time status and statistics.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

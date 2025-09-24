@@ -1,0 +1,107 @@
+{
+  "file_path": "temp_uploads\\comet_installer_latest (1).exe",
+  "file_name": "comet_installer_latest (1).exe",
+  "file_hash": "cc50f2aafb778c21b702c246ed480a14615208799113a29793962c3a8401beb7",
+  "is_malware": true,
+  "confidence": 0.76,
+  "malware_type": "Generic",
+  "risk_score": 76,
+  "analysis_method": "ML,Document,Type,Dynamic",
+  "processing_time": 26.872753858566284,
+  "detailed_results": {
+    "ml_model": {
+      "is_malware": false
+    },
+    "document": {
+      "file_path": "temp_uploads\\comet_installer_latest (1).exe",
+      "file_type": "application/x-msdownload",
+      "mime_type": "application/x-msdownload",
+      "file_hash": "cc50f2aafb778c21b702c246ed480a14615208799113a29793962c3a8401beb7",
+      "suspicious_indicators": [
+        "Binary contains suspicious string: http://",
+        "Binary contains suspicious string: https://",
+        "Binary contains suspicious string: CreateProcess",
+        "Binary contains suspicious string: ShellExecute",
+        "Binary contains suspicious string: GetTickCount"
+      ],
+      "extracted_urls": [
+        "http://ocsp.globalsign.com/rootr30;\u0006\b+\u0006\u0001\u0005\u0005\u00070\u0002/http://secure.globalsign.com/cacert/root-r3.crt06\u0006\u0003U\u001d\u001f\u0004/0-0+)",
+        "http://crl.globalsign.com/root-r3.crl0G\u0006\u0003U\u001d",
+        "https://www.globalsign.com/repository/0",
+        "http://ocsp.globalsign.com/codesigningrootr450F\u0006\b+\u0006\u0001\u0005\u0005\u00070\u0002:http://secure.globalsign.com/cacert/codesigningrootr45.crt0A\u0006\u0003U\u001d\u001f\u0004:0806420http://crl.globalsign.com/codesigningrootr45.crl0U\u0006\u0003U\u001d",
+        "https://www.globalsign.com/repository/0\u0007\u0006\u0005g",
+        "http://secure.globalsign.com/cacert/gsgccr45evcodesignca2020.crt0?\u0006\b+\u0006\u0001\u0005\u0005\u00070\u00013http://ocsp.globalsign.com/gsgccr45evcodesignca20200U\u0006\u0003U\u001d",
+        "http://crl.globalsign.com/gsgccr45evcodesignca2020.crl0",
+        "http://ocsp.digicert.com0",
+        "http://cacerts.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crt0_\u0006\u0003U\u001d\u001f\u0004X0V0TRPNhttp://crl3.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crl0",
+        "http://ocsp.digicert.com0A\u0006\b+\u0006\u0001\u0005\u0005\u00070\u00025http://cacerts.digicert.com/DigiCertTrustedRootG4.crt0C\u0006\u0003U\u001d\u001f\u0004<0:08642http://crl3.digicert.com/DigiCertTrustedRootG4.crl0",
+        "http://ocsp.digicert.com0C\u0006\b+\u0006\u0001\u0005\u0005\u00070\u00027http://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt0E\u0006\u0003U\u001d\u001f\u0004",
+        "http://crl3.digicert.com/DigiCertAssuredIDRootCA.crl0\u0011\u0006\u0003U\u001d"
+      ],
+      "extracted_ips": [
+        "1.0.0.0"
+      ],
+      "risk_score": {
+        "score": 76,
+        "risk_level": "High"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": true,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "spyware",
+      "confidence": 0.36428571428571427,
+      "file_type": "application/x-msdownload",
+      "file_hash": "cc50f2aafb778c21b702c246ed480a14615208799113a29793962c3a8401beb7",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.0,
+        "worm": 0.3,
+        "spyware": 0.36428571428571427,
+        "virus": 0.27142857142857146
+      }
+    },
+    "dynamic": {
+      "file_hash": "cc50f2aafb778c21b702c246ed480a14615208799113a29793962c3a8401beb7",
+      "file_path": "temp_uploads\\comet_installer_latest (1).exe",
+      "processes": [
+        {
+          "name": "crashpad_handler.exe",
+          "pid": 15000,
+          "path": "C:\\Users\\TIWAR\\AppData\\Local\\Temp\\CometInstaller\\crashpad_handler.exe",
+          "has_args": true
+        },
+        {
+          "name": "comet_installer.exe",
+          "pid": 23080,
+          "path": "C:\\Users\\TIWAR\\AppData\\Local\\Temp\\CometInstaller\\comet_installer.exe"
+        }
+      ],
+      "process_count": 2,
+      "file_changes": {
+        "created": 5,
+        "modified": 1,
+        "deleted": 3
+      },
+      "connection_count": 0,
+      "malware_type_indicators": {
+        "likely_type": "Unknown",
+        "type_scores": {
+          "ransomware": 0,
+          "trojan": 0,
+          "worm": 0,
+          "spyware": 0,
+          "virus": 0
+        }
+      },
+      "execution": {
+        "executed": true,
+        "execution_time": 0.7270963191986084,
+        "exit_code": 0,
+        "terminated": false
+      },
+      "risk_score": 0
+    }
+  }
+}

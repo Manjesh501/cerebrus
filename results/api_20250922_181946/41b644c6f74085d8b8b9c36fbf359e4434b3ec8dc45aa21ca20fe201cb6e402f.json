@@ -1,0 +1,9 @@
+{
+  "file_path": "uploads\\test_upload_file.txt",
+  "file_name": "test_upload_file.txt",
+  "file_hash": "41b644c6f74085d8b8b9c36fbf359e4434b3ec8dc45aa21ca20fe201cb6e402f",
+  "is_malware": false,
+  "confidence": 0,
+  "analysis_method": "Document,Type",
+  "processing_time": 0.09566283226013184
+}

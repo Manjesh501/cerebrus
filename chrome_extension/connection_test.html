@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #3367d6;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #f1f1f1;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cerberus Connection Test</h1>
+    
+    <div class="test-section">
+        <h2>Component Status</h2>
+        <button id="checkBackground">Check Background Script</button>
+        <button id="checkContent">Check Content Script</button>
+        <div id="statusResult" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Connection Tests</h2>
+        <button id="testPing">Ping Content Script</button>
+        <button id="testRescan">Test Rescan Function</button>
+        <button id="testDirectMessage">Direct Message Test</button>
+        <div id="connectionResult" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Debug Information</h2>
+        <button id="getDebugInfo">Get Debug Info</button>
+        <div id="debugResult" class="result"></div>
+    </div>
+
+    <script>
+        // Function to display results
+        function displayResult(elementId, message, type = 'info') {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = `result ${type}`;
+        }
+        
+        // Function to check background script
+        document.getElementById('checkBackground').addEventListener('click', function() {
+            displayResult('statusResult', 'Checking background script...', 'info');
+            
+            chrome.runtime.sendMessage({type: 'test'}, function(response) {
+                if (chrome.runtime.lastError) {
+                    displayResult('statusResult', 'Error: ' + chrome.runtime.lastError.message, 'error');
+                } else if (response && response.success) {
+                    displayResult('statusResult', 'Background script is active: ' + response.message, 'success');
+                } else {
+                    displayResult('statusResult', 'Background script response: ' + JSON.stringify(response), 'info');
+                }
+            });
+        });
+        
+        // Function to check content script
+        document.getElementById('checkContent').addEventListener('click', function() {
+            displayResult('statusResult', 'Checking content script...', 'info');
+            
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                if (tabs.length > 0 && tabs[0].url && tabs[0].url.includes('mail.google.com')) {
+                    chrome.tabs.sendMessage(tabs[0].id, {type: 'ping'}, function(response) {
+                        if (chrome.runtime.lastError) {
+                            displayResult('statusResult', 'Content script error: ' + chrome.runtime.lastError.message, 'error');
+                        } else if (response && response.success) {
+                            displayResult('statusResult', 'Content script is active: ' + response.message, 'success');
+                        } else {
+                            displayResult('statusResult', 'Content script response: ' + JSON.stringify(response), 'info');
+                        }
+                    });
+                } else {
+                    displayResult('statusResult', 'Please open Gmail to test content script', 'error');
+                }
+            });
+        });
+        
+        // Function to test ping
+        document.getElementById('testPing').addEventListener('click', function() {
+            displayResult('connectionResult', 'Sending ping to content script...', 'info');
+            
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                if (tabs.length > 0 && tabs[0].url && tabs[0].url.includes('mail.google.com')) {
+                    chrome.tabs.sendMessage(tabs[0].id, {type: 'ping'}, function(response) {
+                        if (chrome.runtime.lastError) {
+                            displayResult('connectionResult', 'Ping failed: ' + chrome.runtime.lastError.message, 'error');
+                        } else if (response && response.success) {
+                            displayResult('connectionResult', 'Ping successful: ' + response.message, 'success');
+                        } else {
+                            displayResult('connectionResult', 'Ping response: ' + JSON.stringify(response), 'info');
+                        }
+                    });
+                } else {
+                    displayResult('connectionResult', 'Please open Gmail to test ping', 'error');
+                }
+            });
+        });
+        
+        // Function to test rescan
+        document.getElementById('testRescan').addEventListener('click', function() {
+            displayResult('connectionResult', 'Testing rescan functionality...', 'info');
+            
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                if (tabs.length > 0 && tabs[0].url && tabs[0].url.includes('mail.google.com')) {
+                    chrome.tabs.sendMessage(tabs[0].id, {type: 'rescanAttachments'}, function(response) {
+                        if (chrome.runtime.lastError) {
+                            displayResult('connectionResult', 'Rescan failed: ' + chrome.runtime.lastError.message, 'error');
+                            // Try fallback through background
+                            chrome.runtime.sendMessage({type: 'rescanAttachments', tabId: tabs[0].id}, function(bgResponse) {
+                                if (chrome.runtime.lastError) {
+                                    displayResult('connectionResult', 'Background fallback also failed: ' + chrome.runtime.lastError.message, 'error');
+                                } else if (bgResponse && bgResponse.success) {
+                                    displayResult('connectionResult', 'Rescan initiated via background: ' + bgResponse.message, 'success');
+                                } else {
+                                    displayResult('connectionResult', 'Background fallback response: ' + JSON.stringify(bgResponse), 'info');
+                                }
+                            });
+                        } else if (response && response.success) {
+                            displayResult('connectionResult', 'Rescan successful: ' + response.message, 'success');
+                        } else {
+                            displayResult('connectionResult', 'Rescan response: ' + JSON.stringify(response), 'info');
+                        }
+                    });
+                } else {
+                    displayResult('connectionResult', 'Please open Gmail to test rescan', 'error');
+                }
+            });
+        });
+        
+        // Function to test direct message
+        document.getElementById('testDirectMessage').addEventListener('click', function() {
+            displayResult('connectionResult', 'Testing direct message...', 'info');
+            
+            chrome.runtime.sendMessage({type: 'rescanAttachments'}, function(response) {
+                if (chrome.runtime.lastError) {
+                    displayResult('connectionResult', 'Direct message failed: ' + chrome.runtime.lastError.message, 'error');
+                } else if (response && response.success) {
+                    displayResult('connectionResult', 'Direct message successful: ' + response.message, 'success');
+                } else {
+                    displayResult('connectionResult', 'Direct message response: ' + JSON.stringify(response), 'info');
+                }
+            });
+        });
+        
+        // Function to get debug info
+        document.getElementById('getDebugInfo').addEventListener('click', function() {
+            displayResult('debugResult', 'Gathering debug information...', 'info');
+            
+            // Get current tab info
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                const debugInfo = {
+                    timestamp: new Date().toISOString(),
+                    currentTab: tabs[0] || null,
+                    extensionId: chrome.runtime.id,
+                    manifest: chrome.runtime.getManifest()
+                };
+                
+                displayResult('debugResult', 'Debug Info:\n' + JSON.stringify(debugInfo, null, 2), 'info');
+            });
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            displayResult('statusResult', 'Ready to test connections. Click buttons above to begin.', 'info');
+        });
+    </script>
+</body>
+</html>

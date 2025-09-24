@@ -1,0 +1,2 @@
+File,Is Malware,Malware Type,Analysis Method,Processing Time
+comet_installer_latest (1).exe,MALWARE,Generic,Static,26.84s

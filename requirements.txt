@@ -1,0 +1,64 @@
+# Core Flask web framework
+Flask==2.3.3
+Werkzeug==2.3.7
+Jinja2==3.1.2
+MarkupSafe==2.1.3
+
+# Machine Learning
+scikit-learn==1.3.0
+numpy==1.24.3
+pandas==2.0.3
+joblib==1.3.2
+shap==0.42.1
+lime==0.2.0.1
+
+# File analysis and magic detection
+# Using python-magic-bin for Windows compatibility
+python-magic-bin==0.4.14
+pefile==2023.2.7
+
+# Document analysis
+olefile==0.46
+lxml==4.9.3
+
+# VirusTotal API integration
+vt-py==0.17.5
+requests==2.31.0
+
+# Web interface
+Flask-Bootstrap==3.3.7.1
+Flask-WTF==1.1.1
+WTForms==3.0.1
+
+# Real-time monitoring
+watchdog==3.0.0
+psutil==5.9.5
+
+# Visualization
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+
+# System utilities
+pywin32==306; sys_platform == 'win32'
+
+# Data processing
+tqdm==4.65.0
+openpyxl==3.1.2
+validators==0.20.0
+
+# Security and production
+waitress==2.1.2
+python-dotenv==1.0.0
+
+# Advanced features
+Docker==6.1.3
+volatility3==2.4.1
+yara-python==4.3.1
+
+# Testing
+pytest==7.4.0
+
+# Additional utilities
+click==8.1.7
+streamlit==1.25.0

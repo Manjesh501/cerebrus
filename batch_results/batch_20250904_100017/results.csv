@@ -1,0 +1,5 @@
+File,Is Malware,Malware Type,Analysis Method,Processing Time
+attention.pdf,CLEAN,Unknown,Static,0.00s
+circularlist.exe,CLEAN,Unknown,Static,12.90s
+node.exe,CLEAN,Unknown,Static,12.75s
+Malware.Calc.exe,MALWARE,Generic,Static,12.46s

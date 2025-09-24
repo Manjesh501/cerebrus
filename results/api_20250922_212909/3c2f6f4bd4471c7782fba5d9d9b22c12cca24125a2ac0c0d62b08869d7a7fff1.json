@@ -1,0 +1,9 @@
+{
+  "file_path": "uploads\\wisdlabs.docx",
+  "file_name": "wisdlabs.docx",
+  "file_hash": "3c2f6f4bd4471c7782fba5d9d9b22c12cca24125a2ac0c0d62b08869d7a7fff1",
+  "is_malware": false,
+  "confidence": 0,
+  "analysis_method": "Document,Type",
+  "processing_time": 0.10515785217285156
+}

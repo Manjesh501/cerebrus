@@ -1,0 +1,40 @@
+2025-09-23 00:41:31,570 - RealTimeMonitor - INFO - Updated watch directories: ['C:\\Users\\TIWAR\\Downloads\\Cerberus-ai-cybershield-main\\Cerberus-ai-cybershield-main\\test_samples']
+2025-09-23 00:41:31,571 - RealTimeMonitor - INFO - Starting real-time malware monitoring for directories: ['C:\\Users\\TIWAR\\Downloads\\Cerberus-ai-cybershield-main\\Cerberus-ai-cybershield-main\\test_samples']
+2025-09-23 00:41:31,572 - RealTimeMonitor - INFO - Watching directory: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples
+2025-09-23 00:41:31,575 - RealTimeMonitor - INFO - Starting periodic system scan
+2025-09-23 00:41:31,576 - RealTimeMonitor - INFO - Malware monitoring system started successfully
+2025-09-23 00:41:31,576 - RealTimeMonitor - INFO - Scanning directory: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples
+2025-09-23 00:41:31,577 - RealTimeMonitor - INFO - Periodic scan completed, queued 3 files for analysis
+2025-09-23 00:41:31,580 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\circularlist.exe
+2025-09-23 00:41:31,580 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\Malware.Calc.ps1.exe
+2025-09-23 00:41:32,061 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\node.exe
+2025-09-23 00:41:32,080 - RealTimeMonitor - WARNING - ML model detected malware: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\Malware.Calc.ps1.exe
+2025-09-23 00:41:36,578 - RealTimeMonitor - INFO - Stopping real-time malware monitoring
+2025-09-23 00:41:37,282 - RealTimeMonitor - INFO - Malware monitoring system stopped
+2025-09-23 00:41:37,283 - RealTimeMonitor - INFO - Updated watch directories: ['C:\\Users\\TIWAR\\Downloads\\Cerberus-ai-cybershield-main\\Cerberus-ai-cybershield-main\\test_samples']
+2025-09-23 00:41:37,284 - RealTimeMonitor - INFO - Starting real-time malware monitoring for directories: ['C:\\Users\\TIWAR\\Downloads\\Cerberus-ai-cybershield-main\\Cerberus-ai-cybershield-main\\test_samples']
+2025-09-23 00:41:37,285 - RealTimeMonitor - INFO - Watching directory: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples
+2025-09-23 00:41:37,288 - RealTimeMonitor - INFO - Starting periodic system scan
+2025-09-23 00:41:37,288 - RealTimeMonitor - INFO - Malware monitoring system started successfully
+2025-09-23 00:41:37,289 - RealTimeMonitor - INFO - Scanning directory: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples
+2025-09-23 00:41:37,289 - RealTimeMonitor - INFO - Periodic scan completed, queued 3 files for analysis
+2025-09-23 00:41:37,292 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\Malware.Calc.ps1.exe
+2025-09-23 00:41:37,292 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\circularlist.exe
+2025-09-23 00:41:37,501 - RealTimeMonitor - WARNING - ML model detected malware: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\Malware.Calc.ps1.exe
+2025-09-23 00:41:37,581 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\node.exe
+2025-09-23 00:41:39,290 - RealTimeMonitor - INFO - Stopping real-time malware monitoring
+2025-09-23 00:41:39,758 - RealTimeMonitor - INFO - Malware monitoring system stopped
+2025-09-23 00:42:02,635 - RealTimeMonitor - INFO - Updated watch directories: ['C:\\Users\\TIWAR\\Downloads\\Cerberus-ai-cybershield-main\\Cerberus-ai-cybershield-main\\test_samples']
+2025-09-23 00:42:02,636 - RealTimeMonitor - INFO - Starting real-time malware monitoring for directories: ['C:\\Users\\TIWAR\\Downloads\\Cerberus-ai-cybershield-main\\Cerberus-ai-cybershield-main\\test_samples']
+2025-09-23 00:42:02,637 - RealTimeMonitor - INFO - Watching directory: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples
+2025-09-23 00:42:02,642 - RealTimeMonitor - INFO - Starting periodic system scan
+2025-09-23 00:42:02,642 - RealTimeMonitor - INFO - Malware monitoring system started successfully
+2025-09-23 00:42:02,643 - RealTimeMonitor - INFO - Scanning directory: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples
+2025-09-23 00:42:02,643 - RealTimeMonitor - INFO - Periodic scan completed, queued 3 files for analysis
+2025-09-23 00:42:02,646 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\Malware.Calc.ps1.exe
+2025-09-23 00:42:02,646 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\circularlist.exe
+2025-09-23 00:42:03,096 - RealTimeMonitor - WARNING - ML model detected malware: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\Malware.Calc.ps1.exe
+2025-09-23 00:42:03,097 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\node.exe
+2025-09-23 00:42:04,650 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\test_new_file.exe
+2025-09-23 00:42:04,651 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\test_new_file.exe
+2025-09-23 00:42:04,973 - RealTimeMonitor - INFO - Analyzing file: C:\Users\TIWAR\Downloads\Cerberus-ai-cybershield-main\Cerberus-ai-cybershield-main\test_samples\test_new_file.exe

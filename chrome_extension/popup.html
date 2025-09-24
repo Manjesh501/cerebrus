@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerberus Gmail Protection</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="icons/icon32.png" alt="Cerberus Logo">
+                <h1>Cerberus Gmail Shield</h1>
+            </div>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot active"></span>
+                <span>Protected</span>
+            </div>
+        </header>
+
+        <div class="gmail-protection">
+            <div class="protection-status" id="gmailProtectionStatus">
+                <div class="status-card active">
+                    <span class="status-icon">🛡️</span>
+                    <div class="status-text">
+                        <span class="status-title">Gmail Protection Active</span>
+                        <span class="status-desc">Monitoring email attachments</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="attachment-stats">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-number" id="attachmentsScanned">0</span>
+                        <span class="stat-label">Scanned</span>
+                    </div>
+                    <div class="stat-item danger">
+                        <span class="stat-number" id="highRiskAttachments">0</span>
+                        <span class="stat-label">Blocked</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-activity" id="recentActivity">
+                <div class="empty-state">
+                    <span class="empty-icon">📎</span>
+                    <p>No threats detected</p>
+                    <p class="empty-desc">Your Gmail attachments are safe</p>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <button class="test-button" id="testExtension">
+                    <span class="icon">🧪</span>
+                    Test Extension
+                </button>
+                <button class="test-button" id="rescanAttachments" style="margin-top: 10px; background: linear-gradient(135deg, #28a745, #1e7e34);">
+                    <span class="icon">🔄</span>
+                    Rescan Attachments
+                </button>
+                <button class="test-button" id="resetStats" style="margin-top: 10px; background: linear-gradient(135deg, #6c757d, #495057);">
+                    <span class="icon">🗑️</span>
+                    Reset Stats
+                </button>
+                <button class="test-button" id="viewThreats" style="margin-top: 10px; background: linear-gradient(135deg, #007bff, #0056b3);">
+                    <span class="icon">👁️</span>
+                    View Threats
+                </button>
+                <p class="test-note">Click to simulate malware detection</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <button class="settings-btn" id="openSettings">⚙️ Settings</button>
+            <span class="version">v1.0</span>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

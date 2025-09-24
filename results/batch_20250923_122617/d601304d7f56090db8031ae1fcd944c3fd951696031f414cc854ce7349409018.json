@@ -1,0 +1,9 @@
+{
+  "file_path": "batch_uploads\\20250923_122617\\Chapter_208.pdf",
+  "file_name": "Chapter_208.pdf",
+  "file_hash": "d601304d7f56090db8031ae1fcd944c3fd951696031f414cc854ce7349409018",
+  "is_malware": false,
+  "confidence": 0,
+  "analysis_method": "Document,Type,VirusTotal",
+  "processing_time": 11.296089172363281
+}

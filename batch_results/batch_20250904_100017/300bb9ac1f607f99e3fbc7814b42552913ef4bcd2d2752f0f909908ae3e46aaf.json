@@ -1,0 +1,52 @@
+{
+  "file_path": "temp_uploads\\Malware.Calc.exe",
+  "file_name": "Malware.Calc.exe",
+  "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+  "is_malware": true,
+  "confidence": 0.8,
+  "malware_type": "Generic",
+  "risk_score": 0,
+  "analysis_method": "ML,Dynamic",
+  "processing_time": 12.45895528793335,
+  "detailed_results": {
+    "ml_model": {
+      "is_malware": "True"
+    },
+    "dynamic": {
+      "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "file_path": "temp_uploads\\Malware.Calc.exe",
+      "processes": [
+        {
+          "name": "RuntimeBroker.exe",
+          "pid": 12636,
+          "path": "C:\\WINDOWS\\System32\\RuntimeBroker.exe",
+          "has_args": true
+        }
+      ],
+      "process_count": 1,
+      "file_changes": {
+        "created": 0,
+        "modified": 1,
+        "deleted": 0
+      },
+      "connection_count": 0,
+      "malware_type_indicators": {
+        "likely_type": "Unknown",
+        "type_scores": {
+          "ransomware": 0,
+          "trojan": 0,
+          "worm": 0,
+          "spyware": 0,
+          "virus": 0
+        }
+      },
+      "execution": {
+        "executed": true,
+        "execution_time": 0.0281674861907959,
+        "exit_code": 0,
+        "terminated": false
+      },
+      "risk_score": 0
+    }
+  }
+}

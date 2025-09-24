@@ -1,0 +1,83 @@
+{
+  "file_path": "uploads\\winutils.exe",
+  "file_name": "winutils.exe",
+  "file_hash": "b5d9d9106791c30e0d806c54ee00e47b8e9c5513b71a78f501df6ab516563929",
+  "is_malware": true,
+  "confidence": 0.3,
+  "malware_type": "Generic",
+  "risk_score": 30,
+  "analysis_method": "ML,Document,Type,Dynamic",
+  "processing_time": 12.549660205841064,
+  "detailed_results": {
+    "ml_model": {
+      "is_malware": false
+    },
+    "document": {
+      "file_path": "uploads\\winutils.exe",
+      "file_type": "application/x-msdownload",
+      "mime_type": "application/x-msdownload",
+      "file_hash": "b5d9d9106791c30e0d806c54ee00e47b8e9c5513b71a78f501df6ab516563929",
+      "suspicious_indicators": [
+        "Binary contains suspicious string: CreateProcess"
+      ],
+      "extracted_urls": [],
+      "extracted_ips": [],
+      "risk_score": {
+        "score": 30,
+        "risk_level": "Medium"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": true,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "Unknown",
+      "confidence": 0,
+      "file_type": "application/x-msdownload",
+      "file_hash": "b5d9d9106791c30e0d806c54ee00e47b8e9c5513b71a78f501df6ab516563929",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.0,
+        "worm": 0.3,
+        "spyware": 0.15,
+        "virus": 0.07142857142857142
+      }
+    },
+    "dynamic": {
+      "file_hash": "b5d9d9106791c30e0d806c54ee00e47b8e9c5513b71a78f501df6ab516563929",
+      "file_path": "uploads\\winutils.exe",
+      "processes": [],
+      "process_count": 0,
+      "file_changes": {
+        "created": 0,
+        "modified": 0,
+        "deleted": 1
+      },
+      "connection_count": 0,
+      "behavioral_indicators": [
+        "Suspicious output detected: error",
+        "Suspicious output detected: administrator"
+      ],
+      "malware_type_indicators": {
+        "likely_type": "Unknown",
+        "type_scores": {
+          "ransomware": 0,
+          "trojan": 0,
+          "worm": 0,
+          "spyware": 0,
+          "virus": 0
+        }
+      },
+      "execution": {
+        "executed": true,
+        "execution_time": 0.04287219047546387,
+        "exit_code": 1,
+        "terminated": false
+      },
+      "risk_score": {
+        "score": 20,
+        "risk_level": "Low"
+      }
+    }
+  }
+}

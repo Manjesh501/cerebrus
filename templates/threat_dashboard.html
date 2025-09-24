@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerberus Threat Intelligence Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --danger-color: #ff6b6b;
+            --success-color: #51cf66;
+            --warning-color: #ffd43b;
+            --dark-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px 0;
+            z-index: 1000;
+        }
+
+        .sidebar .logo {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .sidebar .nav-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar .nav-item:hover,
+        .sidebar .nav-item.active {
+            background: rgba(255, 255, 255, 0.1);
+            border-left-color: white;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .threat-alert {
+            background: linear-gradient(135deg, var(--danger-color), #fa5252);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .alert-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-safe { background: var(--success-color); }
+        .status-warning { background: var(--warning-color); }
+        .status-danger { background: var(--danger-color); }
+
+        .refresh-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .threat-feed {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .threat-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s ease;
+        }
+
+        .threat-item:hover {
+            background: #f8f9fa;
+        }
+
+        .threat-item:last-child {
+            border-bottom: none;
+        }
+
+        .threat-time {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+        }
+
+        .spinner-border {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="logo">
+            <h3><i class="fas fa-shield-alt me-2"></i>Cerberus</h3>
+            <small>Threat Intelligence</small>
+        </div>
+        
+        <div class="nav-item active" data-section="overview">
+            <i class="fas fa-tachometer-alt me-2"></i>
+            Overview
+        </div>
+        
+        <div class="nav-item" data-section="geographic">
+            <i class="fas fa-globe me-2"></i>
+            Geographic Distribution
+        </div>
+        
+        <div class="nav-item" data-section="trends">
+            <i class="fas fa-chart-line me-2"></i>
+            Malware Trends
+        </div>
+        
+        <div class="nav-item" data-section="vectors">
+            <i class="fas fa-bug me-2"></i>
+            Attack Vectors
+        </div>
+        
+        <div class="nav-item" data-section="timeline">
+            <i class="fas fa-clock me-2"></i>
+            Threat Timeline
+        </div>
+        
+        <div class="nav-item" data-section="sectors">
+            <i class="fas fa-industry me-2"></i>
+            Target Sectors
+        </div>
+        
+        <div class="nav-item" data-section="reports">
+            <i class="fas fa-file-alt me-2"></i>
+            Reports
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Mobile menu toggle -->
+        <button class="btn btn-primary d-md-none mb-3" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2><i class="fas fa-shield-virus me-2"></i>Threat Intelligence Dashboard</h2>
+                    <p class="text-muted mb-0">Real-time global threat monitoring and analysis</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <span class="status-indicator status-safe"></span>
+                    <span class="me-3">System Online</span>
+                    <small class="text-muted" id="lastUpdate">Last updated: Loading...</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <div id="overview-section" class="dashboard-section">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number text-primary" id="totalThreats">--</div>
+                        <div class="stat-label">Total Threats Today</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number text-danger" id="criticalThreats">--</div>
+                        <div class="stat-label">Critical Threats</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number text-warning" id="topMalware">--</div>
+                        <div class="stat-label">Top Malware Family</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number text-success" id="avgConfidence">--%</div>
+                        <div class="stat-label">Avg Confidence</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Critical Alerts -->
+            <div id="criticalAlerts"></div>
+
+            <!-- Recent Threats Feed -->
+            <div class="chart-container">
+                <h5><i class="fas fa-stream me-2"></i>Live Threat Feed</h5>
+                <div class="threat-feed" id="threatFeed">
+                    <div class="loading">
+                        <div class="spinner-border" role="status"></div>
+                        <p class="mt-2">Loading threat intelligence...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Geographic Distribution Section -->
+        <div id="geographic-section" class="dashboard-section" style="display: none;">
+            <div class="chart-container">
+                <h5><i class="fas fa-globe me-2"></i>Global Threat Distribution</h5>
+                <div id="geographicChart"></div>
+            </div>
+        </div>
+
+        <!-- Malware Trends Section -->
+        <div id="trends-section" class="dashboard-section" style="display: none;">
+            <div class="chart-container">
+                <h5><i class="fas fa-chart-line me-2"></i>Malware Family Trends</h5>
+                <div id="trendsChart"></div>
+            </div>
+        </div>
+
+        <!-- Attack Vectors Section -->
+        <div id="vectors-section" class="dashboard-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h5><i class="fas fa-chart-pie me-2"></i>Attack Vector Distribution</h5>
+                        <div id="vectorsChart"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h5><i class="fas fa-percentage me-2"></i>Success Rates</h5>
+                        <div id="successRatesChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Threat Timeline Section -->
+        <div id="timeline-section" class="dashboard-section" style="display: none;">
+            <div class="chart-container">
+                <h5><i class="fas fa-clock me-2"></i>24-Hour Threat Timeline</h5>
+                <div id="timelineChart"></div>
+            </div>
+        </div>
+
+        <!-- Target Sectors Section -->
+        <div id="sectors-section" class="dashboard-section" style="display: none;">
+            <div class="chart-container">
+                <h5><i class="fas fa-industry me-2"></i>Threats by Target Sector</h5>
+                <div id="sectorsChart"></div>
+            </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div id="reports-section" class="dashboard-section" style="display: none;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <h6>Generate Report</h6>
+                        <select class="form-select mb-3" id="reportTimeframe">
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                            <option value="30d">Last 30 Days</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="generateReport()">
+                            <i class="fas fa-file-download me-2"></i>
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="stat-card">
+                        <h6>Report Preview</h6>
+                        <div id="reportPreview" class="text-muted">
+                            Select a timeframe and click "Generate Report" to preview.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refresh Button -->
+    <button class="refresh-btn" onclick="refreshDashboard()">
+        <i class="fas fa-sync"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        class ThreatDashboard {
+            constructor() {
+                this.currentSection = 'overview';
+                this.refreshInterval = null;
+                this.isRefreshing = false;
+                
+                this.init();
+            }
+
+            init() {
+                this.setupNavigation();
+                this.loadData();
+                this.startAutoRefresh();
+                this.updateLastUpdateTime();
+            }
+
+            setupNavigation() {
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const section = item.dataset.section;
+                        this.switchSection(section);
+                    });
+                });
+            }
+
+            switchSection(section) {
+                // Update navigation
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelector(`[data-section="${section}"]`).classList.add('active');
+
+                // Update content
+                document.querySelectorAll('.dashboard-section').forEach(sec => {
+                    sec.style.display = 'none';
+                });
+                document.getElementById(`${section}-section`).style.display = 'block';
+
+                this.currentSection = section;
+                this.loadSectionData(section);
+            }
+
+            async loadData() {
+                try {
+                    // Load overview data
+                    const overviewData = await this.fetchData('/api/threat-overview');
+                    this.updateOverview(overviewData);
+
+                    // Load current section data
+                    this.loadSectionData(this.currentSection);
+
+                } catch (error) {
+                    console.error('Error loading dashboard data:', error);
+                    this.showError('Failed to load dashboard data');
+                }
+            }
+
+            async loadSectionData(section) {
+                try {
+                    switch (section) {
+                        case 'overview':
+                            await this.loadThreatFeed();
+                            break;
+                        case 'geographic':
+                            await this.loadGeographicData();
+                            break;
+                        case 'trends':
+                            await this.loadTrendsData();
+                            break;
+                        case 'vectors':
+                            await this.loadVectorsData();
+                            break;
+                        case 'timeline':
+                            await this.loadTimelineData();
+                            break;
+                        case 'sectors':
+                            await this.loadSectorsData();
+                            break;
+                    }
+                } catch (error) {
+                    console.error(`Error loading ${section} data:`, error);
+                }
+            }
+
+            async fetchData(endpoint) {
+                const response = await fetch(endpoint);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            }
+
+            updateOverview(data) {
+                document.getElementById('totalThreats').textContent = data.total_threats || 0;
+                document.getElementById('criticalThreats').textContent = data.critical_threats || 0;
+                document.getElementById('topMalware').textContent = data.top_malware || 'None';
+                document.getElementById('avgConfidence').textContent = (data.average_confidence || 0) + '%';
+
+                // Show critical alerts if any
+                if (data.critical_threats > 0) {
+                    this.showCriticalAlert(data.critical_threats);
+                }
+            }
+
+            showCriticalAlert(count) {
+                const alertsContainer = document.getElementById('criticalAlerts');
+                alertsContainer.innerHTML = `
+                    <div class="threat-alert">
+                        <div class="alert-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h5>Critical Threats Detected</h5>
+                        <p>${count} critical threat${count > 1 ? 's' : ''} detected in the last 24 hours. Immediate attention required.</p>
+                        <button class="btn btn-light btn-sm">
+                            <i class="fas fa-eye me-1"></i>
+                            View Details
+                        </button>
+                    </div>
+                `;
+            }
+
+            async loadThreatFeed() {
+                const feedContainer = document.getElementById('threatFeed');
+                
+                try {
+                    // Simulate live threat feed
+                    const threats = [
+                        {
+                            id: 1,
+                            type: 'Malware',
+                            severity: 'High',
+                            source: '192.168.1.100',
+                            target: 'Financial Sector',
+                            time: new Date(Date.now() - 5 * 60000).toLocaleTimeString()
+                        },
+                        {
+                            id: 2,
+                            type: 'Phishing',
+                            severity: 'Medium',
+                            source: 'suspicious-domain.com',
+                            target: 'Healthcare',
+                            time: new Date(Date.now() - 15 * 60000).toLocaleTimeString()
+                        },
+                        {
+                            id: 3,
+                            type: 'Ransomware',
+                            severity: 'Critical',
+                            source: '10.0.0.25',
+                            target: 'Manufacturing',
+                            time: new Date(Date.now() - 30 * 60000).toLocaleTimeString()
+                        }
+                    ];
+
+                    let feedHTML = '';
+                    threats.forEach(threat => {
+                        const severityClass = threat.severity.toLowerCase();
+                        feedHTML += `
+                            <div class="threat-item">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <span class="status-indicator status-${severityClass === 'critical' ? 'danger' : severityClass === 'high' ? 'warning' : 'safe'}"></span>
+                                        <strong>${threat.type}</strong>
+                                        <span class="badge bg-${severityClass === 'critical' ? 'danger' : severityClass === 'high' ? 'warning' : 'secondary'} ms-2">${threat.severity}</span>
+                                    </div>
+                                    <div class="threat-time">${threat.time}</div>
+                                </div>
+                                <div class="mt-2">
+                                    <small class="text-muted">
+                                        Source: ${threat.source} → Target: ${threat.target}
+                                    </small>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    feedContainer.innerHTML = feedHTML;
+
+                } catch (error) {
+                    feedContainer.innerHTML = '<div class="text-danger">Error loading threat feed</div>';
+                }
+            }
+
+            async loadGeographicData() {
+                try {
+                    const data = await this.fetchData('/api/geographic-distribution');
+                    const chartData = JSON.parse(data.chart);
+                    
+                    Plotly.newPlot('geographicChart', chartData.data, chartData.layout, {
+                        responsive: true,
+                        displayModeBar: false
+                    });
+                } catch (error) {
+                    document.getElementById('geographicChart').innerHTML = 
+                        '<div class="text-center text-muted">Geographic data unavailable</div>';
+                }
+            }
+
+            async loadTrendsData() {
+                try {
+                    const data = await this.fetchData('/api/malware-trends');
+                    const chartData = JSON.parse(data);
+                    
+                    Plotly.newPlot('trendsChart', chartData.data, chartData.layout, {
+                        responsive: true,
+                        displayModeBar: false
+                    });
+                } catch (error) {
+                    document.getElementById('trendsChart').innerHTML = 
+                        '<div class="text-center text-muted">Trends data unavailable</div>';
+                }
+            }
+
+            async loadVectorsData() {
+                try {
+                    const data = await this.fetchData('/api/attack-vectors');
+                    
+                    const frequencyData = JSON.parse(data.frequency_chart);
+                    const successData = JSON.parse(data.success_chart);
+                    
+                    Plotly.newPlot('vectorsChart', frequencyData.data, frequencyData.layout, {
+                        responsive: true,
+                        displayModeBar: false
+                    });
+                    
+                    Plotly.newPlot('successRatesChart', successData.data, successData.layout, {
+                        responsive: true,
+                        displayModeBar: false
+                    });
+                } catch (error) {
+                    document.getElementById('vectorsChart').innerHTML = 
+                        '<div class="text-center text-muted">Attack vectors data unavailable</div>';
+                    document.getElementById('successRatesChart').innerHTML = 
+                        '<div class="text-center text-muted">Success rates data unavailable</div>';
+                }
+            }
+
+            async loadTimelineData() {
+                try {
+                    const data = await this.fetchData('/api/threat-timeline');
+                    const chartData = JSON.parse(data);
+                    
+                    Plotly.newPlot('timelineChart', chartData.data, chartData.layout, {
+                        responsive: true,
+                        displayModeBar: false
+                    });
+                } catch (error) {
+                    document.getElementById('timelineChart').innerHTML = 
+                        '<div class="text-center text-muted">Timeline data unavailable</div>';
+                }
+            }
+
+            async loadSectorsData() {
+                try {
+                    const data = await this.fetchData('/api/sector-analysis');
+                    const chartData = JSON.parse(data);
+                    
+                    Plotly.newPlot('sectorsChart', chartData.data, chartData.layout, {
+                        responsive: true,
+                        displayModeBar: false
+                    });
+                } catch (error) {
+                    document.getElementById('sectorsChart').innerHTML = 
+                        '<div class="text-center text-muted">Sector analysis data unavailable</div>';
+                }
+            }
+
+            startAutoRefresh() {
+                this.refreshInterval = setInterval(() => {
+                    if (!this.isRefreshing) {
+                        this.loadData();
+                        this.updateLastUpdateTime();
+                    }
+                }, 30000); // Refresh every 30 seconds
+            }
+
+            updateLastUpdateTime() {
+                document.getElementById('lastUpdate').textContent = 
+                    `Last updated: ${new Date().toLocaleTimeString()}`;
+            }
+
+            showError(message) {
+                // You can implement a toast notification here
+                console.error(message);
+            }
+        }
+
+        // Initialize dashboard
+        const dashboard = new ThreatDashboard();
+
+        // Global functions
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+
+        function refreshDashboard() {
+            if (!dashboard.isRefreshing) {
+                dashboard.isRefreshing = true;
+                const refreshBtn = document.querySelector('.refresh-btn i');
+                refreshBtn.style.animation = 'spin 1s linear infinite';
+                
+                dashboard.loadData().finally(() => {
+                    dashboard.isRefreshing = false;
+                    refreshBtn.style.animation = '';
+                    dashboard.updateLastUpdateTime();
+                });
+            }
+        }
+
+        async function generateReport() {
+            const timeframe = document.getElementById('reportTimeframe').value;
+            const preview = document.getElementById('reportPreview');
+            
+            try {
+                preview.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>Generating report...';
+                
+                const data = await dashboard.fetchData(`/api/generate-report/${timeframe}`);
+                
+                let reportHTML = `
+                    <h6>Threat Report - ${data.timeframe}</h6>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <strong>Total Threats:</strong> ${data.summary.total_threats}<br>
+                            <strong>Critical:</strong> ${data.summary.critical_threats}<br>
+                            <strong>High:</strong> ${data.summary.high_threats}
+                        </div>
+                        <div class="col-6">
+                            <strong>Avg Confidence:</strong> ${data.summary.average_confidence}%<br>
+                            <strong>Generated:</strong> ${new Date(data.generated_at).toLocaleString()}
+                        </div>
+                    </div>
+                    <hr>
+                    <h6>Top Threats:</h6>
+                    <ul>
+                `;
+                
+                data.top_threats.forEach(threat => {
+                    reportHTML += `<li>${threat.family}: ${threat.count} detections</li>`;
+                });
+                
+                reportHTML += `
+                    </ul>
+                    <button class="btn btn-sm btn-outline-primary" onclick="downloadReport('${data.timeframe}')">
+                        <i class="fas fa-download me-1"></i>Download Full Report
+                    </button>
+                `;
+                
+                preview.innerHTML = reportHTML;
+                
+            } catch (error) {
+                preview.innerHTML = '<div class="text-danger">Error generating report</div>';
+            }
+        }
+
+        function downloadReport(timeframe) {
+            window.open(`/api/generate-report/${timeframe}?download=true`, '_blank');
+        }
+
+        // CSS animation for spin
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

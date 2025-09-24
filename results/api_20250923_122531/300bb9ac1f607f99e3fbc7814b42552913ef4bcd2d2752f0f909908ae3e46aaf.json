@@ -1,0 +1,91 @@
+{
+  "file_path": "uploads\\Malware.Calc.ps1.exe",
+  "file_name": "Malware.Calc.ps1.exe",
+  "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+  "is_malware": true,
+  "confidence": 0.868421052631579,
+  "malware_type": "Trojan",
+  "risk_score": 49,
+  "analysis_method": "ML,Document,Type,VirusTotal",
+  "processing_time": 14.07149362564087,
+  "detailed_results": {
+    "ml_model": {
+      "is_malware": true,
+      "prediction": 1
+    },
+    "document": {
+      "file_path": "uploads\\Malware.Calc.ps1.exe",
+      "file_type": "application/x-msdownload",
+      "mime_type": "application/x-msdownload",
+      "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "suspicious_indicators": [
+        "Binary contains suspicious string: http://",
+        "Binary contains suspicious string: https://"
+      ],
+      "extracted_urls": [
+        "http://www.apache.org/<br",
+        "http://www.zeustech.net/<br",
+        "http://www.apache.org/",
+        "http://www.zeustech.net/",
+        "https://\u0000\u0000\u0000\u0000[%s",
+        "http://\u0000ab:"
+      ],
+      "extracted_ips": [
+        "0.0.0.0"
+      ],
+      "risk_score": {
+        "score": 49,
+        "risk_level": "Medium"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": true,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "worm",
+      "confidence": 0.48333333333333334,
+      "file_type": "application/x-msdownload",
+      "file_hash": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.4625,
+        "worm": 0.48333333333333334,
+        "spyware": 0.0,
+        "virus": 0.1
+      }
+    },
+    "dynamic": {
+      "error": "object of type 'NoneType' has no len()"
+    },
+    "virustotal": {
+      "scan_id": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "scan_date": 1753204833,
+      "total": 76,
+      "positives": 66,
+      "sha256": "300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "md5": "041a28eda8a0b003ac54df9ef74d0069",
+      "permalink": "https://www.virustotal.com/gui/file/300bb9ac1f607f99e3fbc7814b42552913ef4bcd2d2752f0f909908ae3e46aaf",
+      "scans": {
+        "Microsoft": {
+          "detected": true,
+          "result": "Trojan:Win32/Meterpreter.O",
+          "version": "1.1.25050.6",
+          "update": "20250722"
+        },
+        "Kaspersky": {
+          "detected": true,
+          "result": "HEUR:Trojan.Win32.Generic",
+          "version": "22.0.1.28",
+          "update": "20250722"
+        },
+        "Symantec": {
+          "detected": true,
+          "result": "Packed.Generic.347",
+          "version": "1.22.0.0",
+          "update": "20250722"
+        }
+      },
+      "scan_summary": "Showing 3 of 66 positive detections (total scanned: 76)"
+    }
+  }
+}

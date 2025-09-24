@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Monitoring - Cerberus AI Cybershield</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .monitor-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .threat-item {
+            border-left: 4px solid #dc3545;
+            background: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+        .threat-item.medium {
+            border-left-color: #ffc107;
+        }
+        .threat-item.high {
+            border-left-color: #dc3545;
+        }
+        .threat-badge {
+            font-size: 0.8em;
+            padding: 4px 8px;
+        }
+        #threatsList {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: rgba(255, 255, 255, 0.95) !important;">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt"></i> Cerberus AI Cybershield
+            </a>
+            <a href="/" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="text-center mb-4">
+            <h1 class="text-white">Real-time Monitoring</h1>
+            <p class="text-white-50">Monitor system for threats in real-time</p>
+        </div>
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            <i class="fas fa-exclamation-triangle"></i> {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="monitor-card">
+            <h4>Monitoring Status</h4>
+            {% if status == 'running' %}
+                <div class="alert alert-success">
+                    <i class="fas fa-play-circle"></i> Real-time monitoring is active
+                </div>
+                <form method="POST">
+                    <input type="hidden" name="action" value="stop">
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fas fa-stop"></i> Stop Monitoring
+                    </button>
+                </form>
+            {% else %}
+                <div class="alert alert-warning">
+                    <i class="fas fa-pause-circle"></i> Real-time monitoring is stopped
+                </div>
+                <form method="POST">
+                    <input type="hidden" name="action" value="start">
+                    <div class="mb-3">
+                        <label for="directories" class="form-label">Directories to Monitor (comma-separated):</label>
+                        <input type="text" class="form-control" name="directories" placeholder="C:\\Users\\Downloads, C:\\Temp">
+                    </div>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-play"></i> Start Monitoring
+                    </button>
+                </form>
+            {% endif %}
+        </div>
+        
+        <!-- Threat Detection Panel -->
+        <div class="monitor-card" id="threatPanel">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4><i class="fas fa-exclamation-triangle text-warning"></i> Detected Threats</h4>
+                <button class="btn btn-outline-primary btn-sm" onclick="refreshThreats()">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+            </div>
+            
+            <div id="threatStats" class="row mb-3">
+                <div class="col-md-3">
+                    <div class="text-center p-2 bg-light rounded">
+                        <h5 class="mb-0" id="totalThreats">0</h5>
+                        <small class="text-muted">Total Threats</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center p-2 bg-light rounded">
+                        <h5 class="mb-0" id="highSeverity">0</h5>
+                        <small class="text-muted">High Severity</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center p-2 bg-light rounded">
+                        <h5 class="mb-0" id="queueSize">0</h5>
+                        <small class="text-muted">Processing Queue</small>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="text-center p-2 bg-light rounded">
+                        <h5 class="mb-0" id="monitorStatus">Stopped</h5>
+                        <small class="text-muted">Monitor Status</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="threatsList">
+                <div class="text-center text-muted py-4">
+                    <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                    <p>No threats detected yet. Monitoring will update automatically.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let refreshInterval;
+        
+        function refreshThreats() {
+            fetch('/api/realtime/threats')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        updateThreatDisplay(data);
+                    } else {
+                        console.error('Error fetching threats:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+        
+        function updateThreatDisplay(data) {
+            // Update stats
+            document.getElementById('totalThreats').textContent = data.total_threats;
+            document.getElementById('highSeverity').textContent = 
+                data.threats.filter(t => t.severity === 'HIGH').length;
+            document.getElementById('queueSize').textContent = data.queue_size;
+            document.getElementById('monitorStatus').textContent = 
+                data.monitor_running ? 'Running' : 'Stopped';
+            
+            // Update threats list
+            const threatsList = document.getElementById('threatsList');
+            
+            if (data.threats.length === 0) {
+                threatsList.innerHTML = `
+                    <div class="text-center text-muted py-4">
+                        <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                        <p>No threats detected yet. System is clean!</p>
+                    </div>
+                `;
+            } else {
+                threatsList.innerHTML = data.threats.map(threat => `
+                    <div class="threat-item ${threat.severity.toLowerCase()}">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">
+                                    <i class="fas fa-file text-danger"></i>
+                                    ${threat.file_name}
+                                    <span class="badge bg-${threat.severity === 'HIGH' ? 'danger' : 'warning'} threat-badge">
+                                        ${threat.status}
+                                    </span>
+                                </h6>
+                                <p class="mb-2 text-muted small">${threat.file_path}</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <strong>Threat Type:</strong> ${threat.threat_type}<br>
+                                        <strong>Detection:</strong> ${threat.detection_method}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>Confidence:</strong> ${threat.confidence}<br>
+                                        <strong>Hash:</strong> <code>${threat.file_hash}</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="badge bg-${threat.severity === 'HIGH' ? 'danger' : 'warning'}">
+                                    ${threat.severity}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        // Auto-refresh threats every 5 seconds when monitoring is active
+        function startAutoRefresh() {
+            refreshThreats(); // Initial load
+            refreshInterval = setInterval(refreshThreats, 5000);
+        }
+        
+        function stopAutoRefresh() {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+        }
+        
+        // Start auto-refresh on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoRefresh();
+        });
+        
+        // Stop auto-refresh when page is hidden
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                stopAutoRefresh();
+            } else {
+                startAutoRefresh();
+            }
+        });
+    </script>

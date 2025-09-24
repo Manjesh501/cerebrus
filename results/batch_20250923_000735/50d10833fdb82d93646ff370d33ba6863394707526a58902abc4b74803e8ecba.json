@@ -1,0 +1,72 @@
+{
+  "file_path": "batch_uploads\\20250923_000735\\Malware.Calc.ps1.zip",
+  "file_name": "Malware.Calc.ps1.zip",
+  "file_hash": "50d10833fdb82d93646ff370d33ba6863394707526a58902abc4b74803e8ecba",
+  "is_malware": true,
+  "confidence": 0.7236842105263158,
+  "malware_type": "Trojan",
+  "risk_score": 0,
+  "analysis_method": "Document,Type,VirusTotal",
+  "processing_time": 0.8095417022705078,
+  "detailed_results": {
+    "document": {
+      "file_path": "batch_uploads\\20250923_000735\\Malware.Calc.ps1.zip",
+      "file_type": "application/x-zip-compressed",
+      "mime_type": "application/x-zip-compressed",
+      "file_hash": "50d10833fdb82d93646ff370d33ba6863394707526a58902abc4b74803e8ecba",
+      "suspicious_indicators": [],
+      "extracted_urls": [],
+      "extracted_ips": [],
+      "risk_score": {
+        "score": 0,
+        "risk_level": "Low"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": false,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "Unknown",
+      "confidence": 0,
+      "file_type": "application/x-zip-compressed",
+      "file_hash": "50d10833fdb82d93646ff370d33ba6863394707526a58902abc4b74803e8ecba",
+      "all_type_scores": {
+        "ransomware": 0.0,
+        "trojan": 0.0,
+        "worm": 0.0,
+        "spyware": 0.0,
+        "virus": 0.0
+      }
+    },
+    "virustotal": {
+      "scan_id": "50d10833fdb82d93646ff370d33ba6863394707526a58902abc4b74803e8ecba",
+      "scan_date": 1758565671,
+      "total": 76,
+      "positives": 55,
+      "sha256": "50d10833fdb82d93646ff370d33ba6863394707526a58902abc4b74803e8ecba",
+      "md5": "d3b5b40bc4d978c1218c179c2dd05745",
+      "permalink": "https://www.virustotal.com/gui/file/50d10833fdb82d93646ff370d33ba6863394707526a58902abc4b74803e8ecba",
+      "scans": {
+        "Kaspersky": {
+          "detected": true,
+          "result": "HEUR:Trojan.Win32.Generic",
+          "version": "22.0.1.28",
+          "update": "20250922"
+        },
+        "ESET-NOD32": {
+          "detected": true,
+          "result": "a variant of Win32/Rozena.DG",
+          "version": "31902",
+          "update": "20250922"
+        },
+        "Lionic": {
+          "detected": true,
+          "result": "Trojan.Win32.Swrort.4!c",
+          "version": "8.16",
+          "update": "20250922"
+        }
+      },
+      "scan_summary": "Showing 3 of 55 positive detections (total scanned: 76)"
+    }
+  }
+}

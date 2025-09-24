@@ -1,0 +1,98 @@
+{
+  "file_path": "temp_uploads\\CursorUserSetup-x64-1.2.4.exe",
+  "file_name": "CursorUserSetup-x64-1.2.4.exe",
+  "file_hash": "3f999fe24c51707b159201534a6886e1e169760344250979603ea0fc7b9e8506",
+  "is_malware": true,
+  "confidence": 0.62,
+  "malware_type": "Generic",
+  "risk_score": 62,
+  "analysis_method": "ML,Document,Type,Dynamic",
+  "processing_time": 160.0892858505249,
+  "detailed_results": {
+    "ml_model": {
+      "is_malware": false
+    },
+    "document": {
+      "file_path": "temp_uploads\\CursorUserSetup-x64-1.2.4.exe",
+      "file_type": "application/x-msdownload",
+      "mime_type": "application/x-msdownload",
+      "file_hash": "3f999fe24c51707b159201534a6886e1e169760344250979603ea0fc7b9e8506",
+      "suspicious_indicators": [
+        "Binary contains suspicious string: http://",
+        "Binary contains suspicious string: CreateProcess",
+        "Binary contains suspicious string: GetTickCount"
+      ],
+      "extracted_urls": [
+        "http://schemas.microsoft.com/SMI/2005/WindowsSettings",
+        "http://ocsp.digicert.com0A\u0006\b+\u0006\u0001\u0005\u0005\u00070\u00025http://cacerts.digicert.com/DigiCertTrustedRootG4.crt0C\u0006\u0003U\u001d\u001f\u0004<0:08642http://crl3.digicert.com/DigiCertTrustedRootG4.crl0\u001c\u0006\u0003U\u001d",
+        "http://www.digicert.com/CPS0\u000e\u0006\u0003U\u001d\u000f\u0001\u0001\u0004\u0004\u0003\u0002\u00070\u0013\u0006\u0003U\u001d%\u0004",
+        "http://crl3.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crl0SQOMhttp://crl4.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crl0\u0006\b+\u0006\u0001\u0005\u0005\u0007\u0001\u0001\u000400$\u0006\b+\u0006\u0001\u0005\u0005\u00070\u0001\u0018http://ocsp.digicert.com0\\\u0006\b+\u0006\u0001\u0005\u0005\u00070\u0002Phttp://cacerts.digicert.com/DigiCertTrustedG4CodeSigningRSA4096SHA3842021CA1.crt0",
+        "http://ocsp.digicert.com0",
+        "http://cacerts.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crt0_\u0006\u0003U\u001d\u001f\u0004X0V0TRPNhttp://crl3.digicert.com/DigiCertTrustedG4TimeStampingRSA4096SHA2562025CA1.crl0",
+        "http://ocsp.digicert.com0A\u0006\b+\u0006\u0001\u0005\u0005\u00070\u00025http://cacerts.digicert.com/DigiCertTrustedRootG4.crt0C\u0006\u0003U\u001d\u001f\u0004<0:08642http://crl3.digicert.com/DigiCertTrustedRootG4.crl0",
+        "http://ocsp.digicert.com0C\u0006\b+\u0006\u0001\u0005\u0005\u00070\u00027http://cacerts.digicert.com/DigiCertAssuredIDRootCA.crt0E\u0006\u0003U\u001d\u001f\u0004",
+        "http://crl3.digicert.com/DigiCertAssuredIDRootCA.crl0\u0011\u0006\u0003U\u001d"
+      ],
+      "extracted_ips": [
+        "6.4.0.1",
+        "1.0.0.0"
+      ],
+      "risk_score": {
+        "score": 62,
+        "risk_level": "Medium"
+      },
+      "has_macros": false,
+      "has_suspicious_objects": true,
+      "embedded_files": []
+    },
+    "malware_type": {
+      "detected_type": "Unknown",
+      "confidence": 0,
+      "file_type": "application/x-msdownload",
+      "file_hash": "3f999fe24c51707b159201534a6886e1e169760344250979603ea0fc7b9e8506",
+      "all_type_scores": {
+        "ransomware": 0.0625,
+        "trojan": 0.0,
+        "worm": 0.15,
+        "spyware": 0.21428571428571427,
+        "virus": 0.24285714285714285
+      }
+    },
+    "dynamic": {
+      "file_hash": "3f999fe24c51707b159201534a6886e1e169760344250979603ea0fc7b9e8506",
+      "file_path": "temp_uploads\\CursorUserSetup-x64-1.2.4.exe",
+      "processes": [
+        {
+          "name": "msedgewebview2.exe",
+          "pid": 9520,
+          "path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\140.0.3485.81\\msedgewebview2.exe",
+          "has_args": true
+        }
+      ],
+      "process_count": 1,
+      "file_changes": {
+        "created": 1,
+        "modified": 3,
+        "deleted": 0
+      },
+      "connection_count": 0,
+      "malware_type_indicators": {
+        "likely_type": "Unknown",
+        "type_scores": {
+          "ransomware": 0,
+          "trojan": 0,
+          "worm": 0,
+          "spyware": 0,
+          "virus": 0
+        }
+      },
+      "execution": {
+        "executed": true,
+        "execution_time": 29.600428819656372,
+        "exit_code": 2,
+        "terminated": false
+      },
+      "risk_score": 0
+    }
+  }
+}

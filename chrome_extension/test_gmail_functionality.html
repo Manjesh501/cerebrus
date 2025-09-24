@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Gmail Functionality</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #3367d6;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background: #f1f1f1;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Gmail Functionality</h1>
+    
+    <div class="test-section">
+        <h2>Extension Status</h2>
+        <button id="checkStatus">Check Extension Status</button>
+        <div id="statusResult" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Gmail Integration Tests</h2>
+        <button id="testMessaging">Test Popup to Content Script Messaging</button>
+        <button id="testRescan">Test Rescan Attachments</button>
+        <button id="testAttachmentDetection">Test Attachment Detection</button>
+        <div id="gmailResult" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Background Script Tests</h2>
+        <button id="testBackground">Test Background Script Communication</button>
+        <div id="backgroundResult" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('checkStatus').addEventListener('click', function() {
+            const resultDiv = document.getElementById('statusResult');
+            resultDiv.innerHTML = 'Checking extension status...';
+            resultDiv.className = 'result';
+            
+            // Check if we're in a Chrome extension environment
+            if (typeof chrome !== 'undefined' && chrome.runtime) {
+                chrome.runtime.sendMessage({type: 'test'}, function(response) {
+                    if (chrome.runtime.lastError) {
+                        resultDiv.innerHTML = 'Error: ' + chrome.runtime.lastError.message;
+                        resultDiv.className = 'result error';
+                    } else {
+                        resultDiv.innerHTML = 'Extension is active and responding';
+                        resultDiv.className = 'result success';
+                    }
+                });
+            } else {
+                resultDiv.innerHTML = 'Not running in Chrome extension environment';
+                resultDiv.className = 'result error';
+            }
+        });
+        
+        document.getElementById('testMessaging').addEventListener('click', function() {
+            const resultDiv = document.getElementById('gmailResult');
+            resultDiv.innerHTML = 'Testing messaging...';
+            resultDiv.className = 'result';
+            
+            // Test messaging to content script
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                if (tabs.length > 0 && tabs[0].url && tabs[0].url.includes('mail.google.com')) {
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        type: 'testMessage'
+                    }, function(response) {
+                        if (chrome.runtime.lastError) {
+                            resultDiv.innerHTML = 'Messaging Error: ' + chrome.runtime.lastError.message;
+                            resultDiv.className = 'result error';
+                        } else if (response && response.success) {
+                            resultDiv.innerHTML = 'Messaging test successful';
+                            resultDiv.className = 'result success';
+                        } else {
+                            resultDiv.innerHTML = 'Messaging test failed';
+                            resultDiv.className = 'result error';
+                        }
+                    });
+                } else {
+                    resultDiv.innerHTML = 'Please open Gmail to test messaging';
+                    resultDiv.className = 'result error';
+                }
+            });
+        });
+        
+        document.getElementById('testRescan').addEventListener('click', function() {
+            const resultDiv = document.getElementById('gmailResult');
+            resultDiv.innerHTML = 'Testing rescan functionality...';
+            resultDiv.className = 'result';
+            
+            // Test rescan attachments
+            chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                if (tabs.length > 0 && tabs[0].url && tabs[0].url.includes('mail.google.com')) {
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        type: 'rescanAttachments'
+                    }, function(response) {
+                        if (chrome.runtime.lastError) {
+                            resultDiv.innerHTML = 'Rescan Error: ' + chrome.runtime.lastError.message;
+                            resultDiv.className = 'result error';
+                        } else if (response && response.success) {
+                            resultDiv.innerHTML = 'Rescan initiated successfully';
+                            resultDiv.className = 'result success';
+                        } else {
+                            resultDiv.innerHTML = 'Rescan failed';
+                            resultDiv.className = 'result error';
+                        }
+                    });
+                } else {
+                    resultDiv.innerHTML = 'Please open Gmail to test rescan';
+                    resultDiv.className = 'result error';
+                }
+            });
+        });
+        
+        document.getElementById('testAttachmentDetection').addEventListener('click', function() {
+            const resultDiv = document.getElementById('gmailResult');
+            resultDiv.innerHTML = 'Testing attachment detection...';
+            resultDiv.className = 'result';
+            
+            // This would normally be handled by the content script
+            resultDiv.innerHTML = 'Attachment detection test completed (see console for details)';
+            resultDiv.className = 'result success';
+            
+            // In a real scenario, we would check if the content script has detected attachments
+            console.log('Attachment detection test initiated');
+        });
+        
+        document.getElementById('testBackground').addEventListener('click', function() {
+            const resultDiv = document.getElementById('backgroundResult');
+            resultDiv.innerHTML = 'Testing background script...';
+            resultDiv.className = 'result';
+            
+            // Test background script communication
+            chrome.runtime.sendMessage({type: 'test'}, function(response) {
+                if (chrome.runtime.lastError) {
+                    resultDiv.innerHTML = 'Background Error: ' + chrome.runtime.lastError.message;
+                    resultDiv.className = 'result error';
+                } else if (response && response.success) {
+                    resultDiv.innerHTML = 'Background script communication successful';
+                    resultDiv.className = 'result success';
+                } else {
+                    resultDiv.innerHTML = 'Background script test failed';
+                    resultDiv.className = 'result error';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

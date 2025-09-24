@@ -1,0 +1,16 @@
+Test file with suspicious name pattern: invoice_payment.exe.txt
+
+This is a test file to simulate an attachment that would trigger Cerberus warnings.
+
+When renamed to have suspicious extensions like:
+- invoice.exe
+- payment.scr  
+- document.bat
+- urgent_update.pif
+
+The Cerberus system would flag these as high-risk based on:
+1. Suspicious filename patterns
+2. Dangerous file extensions
+3. Social engineering indicators
+
+This helps protect users from malware disguised as legitimate documents.
