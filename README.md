@@ -213,7 +213,7 @@ cerberus-ai-cybershield/
 - Windows, macOS, or Linux operating system
 
 ### Quick Setup
-
+Use Python 3.11 only
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Manjesh501/Cerberus.git

@@ -1,82 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Batch Analysis - Cerberus AI Cybershield</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
-        .upload-area {
-            border: 3px dashed #667eea;
-            border-radius: 15px;
-            padding: 60px 20px;
-            text-align: center;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+
+        .navbar {
             background: white;
-            margin: 2rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            padding: var(--spacing-md) 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .navbar-brand i {
+            color: var(--primary);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 0.5rem 1rem;
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .btn-back:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .page-subtitle {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+
+        .upload-card {
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .upload-area {
+            border: 2px dashed var(--gray-300);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            background: var(--gray-50);
+            transition: all 0.2s;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: white;
+        }
+
+        .upload-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gray-100);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+        }
+
+        .upload-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+
+        .upload-area h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .upload-area p {
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .file-input {
+            margin: var(--spacing-md) 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:disabled {
+            background: var(--gray-300);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .alert {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .alert-danger {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: var(--spacing-lg);
         }
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background: rgba(255, 255, 255, 0.95) !important;">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-shield-alt"></i> Cerberus AI Cybershield
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">
+                <i class="fas fa-shield-alt"></i>
+                Cerberus AI Cybershield
             </a>
-            <a href="/" class="btn btn-outline-primary">
-                <i class="fas fa-arrow-left"></i> Back to Home
+            <a href="/" class="btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
             </a>
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="text-center mb-4">
-            <h1 class="text-white">Batch Analysis</h1>
-            <p class="text-white-50">Upload multiple files for analysis</p>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Batch Analysis</h1>
+            <p class="page-subtitle">Upload multiple files for analysis</p>
         </div>
 
         {% if error %}
-        <div class="alert alert-danger" role="alert">
-            <i class="fas fa-exclamation-triangle"></i> {{ error }}
+        <div class="alert alert-danger">
+            <i class="fas fa-exclamation-triangle"></i>
+            {{ error }}
         </div>
         {% endif %}
 
-        <form method="POST" enctype="multipart/form-data" class="upload-area" id="batchForm">
-            <div class="mb-4">
-                <i class="fas fa-upload fa-3x text-primary mb-3"></i>
-                <h4>Select Multiple Files</h4>
-                <input type="file" name="files[]" multiple class="form-control mb-3">
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
-                <i class="fas fa-rocket"></i> Start Batch Analysis
-            </button>
-        </form>
+        <div class="upload-card">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="upload-area">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Select Multiple Files</h3>
+                    <p>Choose files to analyze in batch mode</p>
+
+                    <div class="file-input">
+                        <input type="file" name="files[]" multiple required
+                            style="padding: 0.5rem; border: 1px solid var(--gray-300); border-radius: var(--radius-md); width: 100%; max-width: 400px;">
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        Start Batch Analysis
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-    
-    <script>
-        document.getElementById('batchForm').addEventListener('submit', function() {
-            // Change the button text and add loading spinner
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
-            submitBtn.disabled = true;
-            
-            // Add loading animation to the browser tab title
-            const originalTitle = document.title;
-            let dots = '';
-            
-            const loadingInterval = setInterval(function() {
-                dots = dots.length >= 3 ? '' : dots + '•';
-                document.title = `Analyzing${dots} - ${originalTitle}`;
-            }, 500);
-            
-            // Store the interval ID so it can be cleared if needed
-            window.loadingInterval = loadingInterval;
-        });
-    </script>
 </body>
+
 </html>

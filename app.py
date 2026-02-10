@@ -1211,8 +1211,8 @@ def api_realtime_threats():
                     'confidence': f"{details.get('confidence', 0)*100:.0f}%",
                     'detection_method': 'ML Model' if details.get('ml_detection') else 'Heuristic Analysis',
                     'file_hash': details.get('file_hash', 'N/A')[:16] + '...' if details.get('file_hash') else 'N/A',
-                    'status': 'BLOCKED' if details.get('confidence', 0) > 0.8 else 'SUSPICIOUS',
-                    'severity': 'HIGH' if details.get('confidence', 0) > 0.8 else 'MEDIUM',
+                    'status': 'BLOCKED' if details.get('confidence', 0) > 0.6 else 'SUSPICIOUS',
+                    'severity': 'HIGH' if details.get('confidence', 0) > 0.6 else 'MEDIUM',
                     'timestamp': datetime.now().isoformat()
                 }
                 threats.append(threat)

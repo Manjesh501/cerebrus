@@ -312,9 +312,9 @@ class BatchProcessor:
             try:
                 doc_result = self.analyzers['document'].analyze_document(file_path)
                 
-                # If risk score is high or has suspicious objects, consider it malware
+                # Only flag as malware if risk score is above 60% threshold
                 doc_risk_score = doc_result.get('risk_score', {}).get('score', 0)
-                if doc_risk_score > 70 or doc_result.get('has_suspicious_objects', False):
+                if doc_risk_score > 60:
                     is_malware = True
                     confidence = max(confidence, doc_risk_score / 100)
                     risk_score = max(risk_score, doc_risk_score)
@@ -330,7 +330,7 @@ class BatchProcessor:
             try:
                 type_result = self.analyzers['malware_type'].detect_malware_type(file_path)
                 
-                if type_result.get('confidence', 0) > 0.5:
+                if type_result.get('confidence', 0) > 0.6:
                     is_malware = True
                     confidence = max(confidence, type_result.get('confidence', 0))
                     detected_type = type_result.get('detected_type', '')
@@ -359,7 +359,7 @@ class BatchProcessor:
                     elif isinstance(dyn_result['risk_score'], (int, float)):
                         dyn_risk_score = dyn_result['risk_score']  # Handle if risk_score is a direct value
                 
-                if dyn_risk_score > 70:
+                if dyn_risk_score > 60:
                     is_malware = True
                     confidence = max(confidence, dyn_risk_score / 100)
                     risk_score = max(risk_score, dyn_risk_score)

@@ -1,148 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-time Monitoring - Cerberus AI Cybershield</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1f2937;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-900);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: var(--spacing-md) 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .navbar-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .navbar-brand i {
+            color: var(--primary);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 0.5rem 1rem;
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .btn-back:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+
+        .page-header {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .page-subtitle {
+            color: var(--gray-600);
+            font-size: 1rem;
+        }
+
         .monitor-card {
             background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
         }
-        .threat-item {
-            border-left: 4px solid #dc3545;
-            background: #f8f9fa;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 0 8px 8px 0;
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: var(--spacing-md);
         }
-        .threat-item.medium {
-            border-left-color: #ffc107;
+
+        .alert {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
         }
-        .threat-item.high {
-            border-left-color: #dc3545;
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
         }
-        .threat-badge {
-            font-size: 0.8em;
-            padding: 4px 8px;
+
+        .alert-warning {
+            background: #fef3c7;
+            color: #92400e;
+            border: 1px solid #fde68a;
         }
-        #threatsList {
-            max-height: 400px;
+
+        .alert-danger {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.875rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.625rem 0.875rem;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            font-size: 0.9375rem;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .stat-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .threats-list {
+            max-height: 500px;
             overflow-y: auto;
+        }
+
+        .threat-item {
+            background: var(--gray-50);
+            border-left: 4px solid var(--danger);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .threat-item.medium {
+            border-left-color: var(--warning);
+        }
+
+        .threat-item.low {
+            border-left-color: var(--success);
+        }
+
+        .threat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .threat-title {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.9375rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .threat-path {
+            color: var(--gray-500);
+            font-size: 0.8125rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .threat-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+            font-size: 0.875rem;
+        }
+
+        .detail-item {
+            color: var(--gray-600);
+        }
+
+        .detail-item strong {
+            color: var(--gray-700);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            color: var(--gray-500);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--gray-300);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
         }
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background: rgba(255, 255, 255, 0.95) !important;">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-shield-alt"></i> Cerberus AI Cybershield
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-brand">
+                <i class="fas fa-shield-alt"></i>
+                Cerberus AI Cybershield
             </a>
-            <a href="/" class="btn btn-outline-primary">
-                <i class="fas fa-arrow-left"></i> Back to Home
+            <a href="/" class="btn-back">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
             </a>
         </div>
     </nav>
 
-    <div class="container mt-4">
-        <div class="text-center mb-4">
-            <h1 class="text-white">Real-time Monitoring</h1>
-            <p class="text-white-50">Monitor system for threats in real-time</p>
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Real-time Monitoring</h1>
+            <p class="page-subtitle">Monitor system for threats in real-time</p>
         </div>
 
         {% if error %}
-        <div class="alert alert-danger" role="alert">
-            <i class="fas fa-exclamation-triangle"></i> {{ error }}
+        <div class="alert alert-danger">
+            <i class="fas fa-exclamation-triangle"></i>
+            {{ error }}
         </div>
         {% endif %}
 
+        <!-- Monitoring Control -->
         <div class="monitor-card">
-            <h4>Monitoring Status</h4>
+            <h4 class="card-title">Monitoring Status</h4>
             {% if status == 'running' %}
-                <div class="alert alert-success">
-                    <i class="fas fa-play-circle"></i> Real-time monitoring is active
-                </div>
-                <form method="POST">
-                    <input type="hidden" name="action" value="stop">
-                    <button type="submit" class="btn btn-danger">
-                        <i class="fas fa-stop"></i> Stop Monitoring
-                    </button>
-                </form>
+            <div class="alert alert-success">
+                <i class="fas fa-play-circle"></i>
+                Real-time monitoring is active
+            </div>
+            <form method="POST">
+                <input type="hidden" name="action" value="stop">
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-stop"></i>
+                    Stop Monitoring
+                </button>
+            </form>
             {% else %}
-                <div class="alert alert-warning">
-                    <i class="fas fa-pause-circle"></i> Real-time monitoring is stopped
+            <div class="alert alert-warning">
+                <i class="fas fa-pause-circle"></i>
+                Real-time monitoring is stopped
+            </div>
+            <form method="POST">
+                <input type="hidden" name="action" value="start">
+                <div class="form-group">
+                    <label for="directories" class="form-label">Directories to Monitor (comma-separated):</label>
+                    <input type="text" class="form-control" name="directories"
+                        placeholder="C:\Users\Downloads, C:\Temp">
                 </div>
-                <form method="POST">
-                    <input type="hidden" name="action" value="start">
-                    <div class="mb-3">
-                        <label for="directories" class="form-label">Directories to Monitor (comma-separated):</label>
-                        <input type="text" class="form-control" name="directories" placeholder="C:\\Users\\Downloads, C:\\Temp">
-                    </div>
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-play"></i> Start Monitoring
-                    </button>
-                </form>
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-play"></i>
+                    Start Monitoring
+                </button>
+            </form>
             {% endif %}
         </div>
-        
+
         <!-- Threat Detection Panel -->
-        <div class="monitor-card" id="threatPanel">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4><i class="fas fa-exclamation-triangle text-warning"></i> Detected Threats</h4>
-                <button class="btn btn-outline-primary btn-sm" onclick="refreshThreats()">
-                    <i class="fas fa-sync-alt"></i> Refresh
+        <div class="monitor-card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    <i class="fas fa-exclamation-triangle" style="color: var(--warning);"></i>
+                    Detected Threats
+                </h4>
+                <button class="btn btn-outline btn-sm" onclick="refreshThreats()">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh
                 </button>
             </div>
-            
-            <div id="threatStats" class="row mb-3">
-                <div class="col-md-3">
-                    <div class="text-center p-2 bg-light rounded">
-                        <h5 class="mb-0" id="totalThreats">0</h5>
-                        <small class="text-muted">Total Threats</small>
-                    </div>
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalThreats">0</div>
+                    <div class="stat-label">Total Threats</div>
                 </div>
-                <div class="col-md-3">
-                    <div class="text-center p-2 bg-light rounded">
-                        <h5 class="mb-0" id="highSeverity">0</h5>
-                        <small class="text-muted">High Severity</small>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="highSeverity" style="color: var(--danger);">0</div>
+                    <div class="stat-label">High Severity</div>
                 </div>
-                <div class="col-md-3">
-                    <div class="text-center p-2 bg-light rounded">
-                        <h5 class="mb-0" id="queueSize">0</h5>
-                        <small class="text-muted">Processing Queue</small>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="queueSize">0</div>
+                    <div class="stat-label">Processing Queue</div>
                 </div>
-                <div class="col-md-3">
-                    <div class="text-center p-2 bg-light rounded">
-                        <h5 class="mb-0" id="monitorStatus">Stopped</h5>
-                        <small class="text-muted">Monitor Status</small>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="monitorStatus">Stopped</div>
+                    <div class="stat-label">Monitor Status</div>
                 </div>
             </div>
-            
-            <div id="threatsList">
-                <div class="text-center text-muted py-4">
-                    <i class="fas fa-shield-alt fa-3x mb-3"></i>
+
+            <!-- Threats List -->
+            <div id="threatsList" class="threats-list">
+                <div class="empty-state">
+                    <i class="fas fa-shield-alt"></i>
                     <p>No threats detected yet. Monitoring will update automatically.</p>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script>
         let refreshInterval;
-        
+
         function refreshThreats() {
             fetch('/api/realtime/threats')
                 .then(response => response.json())
@@ -157,80 +500,89 @@
                     console.error('Error:', error);
                 });
         }
-        
+
         function updateThreatDisplay(data) {
             // Update stats
-            document.getElementById('totalThreats').textContent = data.total_threats;
-            document.getElementById('highSeverity').textContent = 
-                data.threats.filter(t => t.severity === 'HIGH').length;
-            document.getElementById('queueSize').textContent = data.queue_size;
-            document.getElementById('monitorStatus').textContent = 
+            document.getElementById('totalThreats').textContent = data.total_threats || 0;
+            document.getElementById('highSeverity').textContent =
+                data.threats ? data.threats.filter(t => t.severity === 'HIGH').length : 0;
+            document.getElementById('queueSize').textContent = data.queue_size || 0;
+            document.getElementById('monitorStatus').textContent =
                 data.monitor_running ? 'Running' : 'Stopped';
-            
+
             // Update threats list
             const threatsList = document.getElementById('threatsList');
-            
-            if (data.threats.length === 0) {
+
+            if (!data.threats || data.threats.length === 0) {
                 threatsList.innerHTML = `
-                    <div class="text-center text-muted py-4">
-                        <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                    <div class="empty-state">
+                        <i class="fas fa-shield-alt"></i>
                         <p>No threats detected yet. System is clean!</p>
                     </div>
                 `;
             } else {
-                threatsList.innerHTML = data.threats.map(threat => `
-                    <div class="threat-item ${threat.severity.toLowerCase()}">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div class="flex-grow-1">
-                                <h6 class="mb-1">
-                                    <i class="fas fa-file text-danger"></i>
-                                    ${threat.file_name}
-                                    <span class="badge bg-${threat.severity === 'HIGH' ? 'danger' : 'warning'} threat-badge">
-                                        ${threat.status}
-                                    </span>
-                                </h6>
-                                <p class="mb-2 text-muted small">${threat.file_path}</p>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <strong>Threat Type:</strong> ${threat.threat_type}<br>
-                                        <strong>Detection:</strong> ${threat.detection_method}
+                threatsList.innerHTML = data.threats.map(threat => {
+                    const severityClass = threat.severity === 'HIGH' ? 'danger' :
+                        threat.severity === 'MEDIUM' ? 'warning' : 'success';
+                    const itemClass = threat.severity === 'HIGH' ? '' :
+                        threat.severity === 'MEDIUM' ? 'medium' : 'low';
+
+                    return `
+                        <div class="threat-item ${itemClass}">
+                            <div class="threat-header">
+                                <div>
+                                    <div class="threat-title">
+                                        <i class="fas fa-file" style="color: var(--gray-400);"></i>
+                                        ${threat.file_name}
+                                        <span class="badge badge-${severityClass}">
+                                            ${threat.status || 'Detected'}
+                                        </span>
                                     </div>
-                                    <div class="col-md-6">
-                                        <strong>Confidence:</strong> ${threat.confidence}<br>
-                                        <strong>Hash:</strong> <code>${threat.file_hash}</code>
-                                    </div>
+                                    <div class="threat-path">${threat.file_path}</div>
                                 </div>
-                            </div>
-                            <div class="text-end">
-                                <span class="badge bg-${threat.severity === 'HIGH' ? 'danger' : 'warning'}">
+                                <span class="badge badge-${severityClass}">
                                     ${threat.severity}
                                 </span>
                             </div>
+                            <div class="threat-details">
+                                <div class="detail-item">
+                                    <strong>Threat Type:</strong> ${threat.threat_type || 'Unknown'}
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Detection:</strong> ${threat.detection_method || 'N/A'}
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Confidence:</strong> ${threat.confidence || 'N/A'}
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Hash:</strong> <code style="font-size: 0.75rem;">${threat.file_hash ? threat.file_hash.substring(0, 16) + '...' : 'N/A'}</code>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
             }
         }
-        
+
         // Auto-refresh threats every 5 seconds when monitoring is active
         function startAutoRefresh() {
             refreshThreats(); // Initial load
             refreshInterval = setInterval(refreshThreats, 5000);
         }
-        
+
         function stopAutoRefresh() {
             if (refreshInterval) {
                 clearInterval(refreshInterval);
             }
         }
-        
+
         // Start auto-refresh on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             startAutoRefresh();
         });
-        
+
         // Stop auto-refresh when page is hidden
-        document.addEventListener('visibilitychange', function() {
+        document.addEventListener('visibilitychange', function () {
             if (document.hidden) {
                 stopAutoRefresh();
             } else {
@@ -238,3 +590,6 @@
             }
         });
     </script>
+</body>
+
+</html>
