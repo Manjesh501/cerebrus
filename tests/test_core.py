@@ -24,8 +24,10 @@ try:
 except ImportError:
     has_pefile = False
 
-# Import our modules with fallback handling
-from app import allowed_file, fallback_extract_features, fallback_detect_malware
+# Import our modules — now from the cerberus package
+from cerberus.utils import allowed_file
+from cerberus.core.analysis import fallback_extract_features, fallback_detect_malware
+
 try:
     from feature_extraction import extract_features
     has_feature_extractor = True

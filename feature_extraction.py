@@ -1,8 +1,8 @@
-import pefile
-import pandas as pd
 import math
-import pefile
 import os
+
+import pandas as pd
+import pefile
 
 def calculate_entropy(data):
     """Calculate entropy of a data section"""

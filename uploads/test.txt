@@ -1,2 +1,0 @@
-This is a test file for analysis.
-It contains some test content to verify that the malware analysis system is working correctly.

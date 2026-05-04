@@ -141,14 +141,13 @@ class BatchProcessor:
                 try:
                     if importlib.util.find_spec("vt_api") is not None:
                         from vt_api import VirusTotalScanner
-                        
-                        # Check for API key in environment or use hardcoded key
-                        vt_api_key = os.environ.get('VT_API_KEY') or '9945c44ec7c6e131d6e6c49bf6185bd7d51b82a8a56204a7711c5199eed27675'
+                        # Check for API key in environment only — never hardcode secrets
+                        vt_api_key = os.environ.get('VT_API_KEY')
                         if vt_api_key:
                             self.analyzers['virustotal'] = VirusTotalScanner(api_key=vt_api_key)
-                            logger.info("Loaded VirusTotal scanner with hardcoded API key")
+                            logger.info("Loaded VirusTotal scanner")
                         else:
-                            logger.warning("No VirusTotal API key provided. VirusTotal scanning will be skipped.")
+                            logger.warning("VT_API_KEY not set — VirusTotal scanning disabled")
                 except Exception as e:
                     logger.error(f"Error setting up VirusTotal scanner: {e}")
     
@@ -548,41 +547,28 @@ class BatchProcessor:
     
     def process_files_in_chunks(self, file_paths, chunk_size=10):
         """
-        Process large batches of files in smaller chunks to manage memory usage
-        
-        Args:
-            file_paths: List of file paths to process
-            chunk_size: Number of files to process in each chunk
-            
-        Returns:
-            list: Results for all processed files
+        Process large batches of files in smaller chunks to manage memory usage.
+
+        Returns a list of per-chunk summary dicts (one summary per chunk).
         """
         logger.info(f"Processing {len(file_paths)} files in chunks of {chunk_size}")
-        
-        # Split files into chunks
         file_chunks = [file_paths[i:i + chunk_size] for i in range(0, len(file_paths), chunk_size)]
-        
-        all_results = []
-        chunk_count = len(file_chunks)
-        
+        all_summaries = []
+
         for i, chunk in enumerate(file_chunks):
-            logger.info(f"Processing chunk {i+1}/{chunk_count} ({len(chunk)} files)")
-            
-            # Process chunk
-            chunk_results = self.process_files(chunk)
-            all_results.extend(chunk_results)
-            
-            # Force garbage collection after each chunk
+            logger.info(f"Processing chunk {i+1}/{len(file_chunks)} ({len(chunk)} files)")
+            chunk_summary = self.process_files(chunk)
+            all_summaries.append(chunk_summary)  # process_files returns a summary dict
+
             try:
                 import gc
                 gc.collect()
-            except:
+            except Exception:
                 pass
-            
-            # Short delay between chunks to allow system to free resources
+
             time.sleep(0.5)
-        
-        return all_results
+
+        return all_summaries
     
     def process_files_with_memory_limit(self, file_paths, memory_limit_mb=500):
         """
@@ -605,54 +591,50 @@ class BatchProcessor:
             has_psutil = False
             logger.warning("psutil not available, memory limit will not be enforced")
         
-        all_results = []
+        all_summaries = []
         pending_files = list(file_paths)
         processed_count = 0
-        
-        # Start with a reasonable chunk size
+
         current_chunk_size = min(10, len(pending_files))
-        
+
         while pending_files:
-            # Take next chunk
             current_chunk = pending_files[:current_chunk_size]
             del pending_files[:current_chunk_size]
-            
-            # Process chunk
-            logger.info(f"Processing chunk of {len(current_chunk)} files " +
-                        f"({processed_count}/{len(file_paths)} completed)")
-            chunk_results = self.process_files(current_chunk)
-            all_results.extend(chunk_results)
+
+            logger.info(
+                f"Processing chunk of {len(current_chunk)} files "
+                f"({processed_count}/{len(file_paths)} completed)"
+            )
+            chunk_summary = self.process_files(current_chunk)
+            all_summaries.append(chunk_summary)
             processed_count += len(current_chunk)
-            
-            # Check memory usage and adjust chunk size if needed
+
             if has_psutil:
                 process = psutil.Process()
                 memory_usage_mb = process.memory_info().rss / (1024 * 1024)
                 logger.debug(f"Current memory usage: {memory_usage_mb:.2f}MB")
-                
-                # Adjust chunk size based on memory usage
+
                 if memory_usage_mb > memory_limit_mb * 0.8:
-                    # Too close to limit, reduce chunk size
                     current_chunk_size = max(1, current_chunk_size // 2)
-                    logger.warning(f"Memory usage high ({memory_usage_mb:.2f}MB), " +
-                                  f"reducing chunk size to {current_chunk_size}")
-                    
-                    # Force garbage collection
+                    logger.warning(
+                        f"Memory usage high ({memory_usage_mb:.2f}MB), "
+                        f"reducing chunk size to {current_chunk_size}"
+                    )
                     try:
                         import gc
                         gc.collect()
-                    except:
+                    except Exception:
                         pass
-                    
-                    # Wait for memory to be freed
                     time.sleep(1.0)
                 elif memory_usage_mb < memory_limit_mb * 0.5 and current_chunk_size < 50:
-                    # Well below limit, can increase chunk size
                     current_chunk_size = min(len(pending_files), current_chunk_size * 2)
-                    logger.info(f"Memory usage acceptable ({memory_usage_mb:.2f}MB), " +
-                               f"increasing chunk size to {current_chunk_size}")
-        
-        return all_results
+                    logger.info(
+                        f"Memory usage acceptable ({memory_usage_mb:.2f}MB), "
+                        f"increasing chunk size to {current_chunk_size}"
+                    )
+
+        return all_summaries
+
     
     def _prefilter_large_files(self, file_paths, size_threshold_mb=50):
         """
